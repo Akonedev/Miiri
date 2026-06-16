@@ -126,8 +126,8 @@ def run_omni_curriculum():
     torch.save({
         'reasoning_core': model.state_dict(),
         'omni_decoder': decoder.state_dict()
-    }, "Dist/OCM_Native_Unified.pt")
-    print("[SUCCESS] Poids Natifs Unifiés (Cœur + Décodeur) sauvegardés dans Dist/OCM_Native_Unified.pt")
+    }, "Dist/Miiri_Native_Unified.pt")
+    print("[SUCCESS] Poids Natifs Unifiés (Cœur + Décodeur) sauvegardés dans Dist/Miiri_Native_Unified.pt")
 
 if __name__ == "__main__":
     run_omni_curriculum()

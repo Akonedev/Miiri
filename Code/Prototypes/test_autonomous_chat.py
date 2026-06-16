@@ -6,7 +6,7 @@ import os
 # Add project root to sys.path to allow imports
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 
-from Code.Training.train_fluent_ocm import OCM_QPLS_Adapter
+from Code.Training.train_fluent_miiri import Miiri_QPLS_Adapter
 
 def generate_response(prompt, tokenizer, base_model, adapter, device):
     """
@@ -46,9 +46,9 @@ def test_chat():
     base_model = AutoModelForCausalLM.from_pretrained("distilgpt2").to(device)
     
     # 2. Charger les Poids Entraînés de l'Adapter (Le Filtre Miiri)
-    adapter = OCM_QPLS_Adapter(llm_hidden_size=768, qpls_size=256).to(device)
+    adapter = Miiri_QPLS_Adapter(llm_hidden_size=768, qpls_size=256).to(device)
     try:
-        adapter.load_state_dict(torch.load("Dist/OCM_Real_Adapter.pt", map_location=device))
+        adapter.load_state_dict(torch.load("Dist/Miiri_Real_Adapter.pt", map_location=device))
         print("[*] Succès: Poids de l'Adapter Miiri chargés.")
     except Exception as e:
         print(f"[ERREUR] Impossible de charger les poids : {e}")

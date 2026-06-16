@@ -9,7 +9,7 @@ import sys
 # et entraîne un goulot d'étranglement (Adapter) qui projette les pensées vers l'espace Mentalese (256d)
 # avant de générer la réponse en anglais fluide.
 
-class OCM_QPLS_Adapter(nn.Module):
+class Miiri_QPLS_Adapter(nn.Module):
     def __init__(self, llm_hidden_size=768, qpls_size=256):
         super().__init__()
         # Projetter le langage vers le Mentalese
@@ -47,7 +47,7 @@ def train_fluent_adapter():
         param.requires_grad = False
         
     print("[*] Cortex linguistique figé. Initialisation de l'Adapter Miiri-QPLS (768 -> 256 -> 768)...")
-    adapter = OCM_QPLS_Adapter(llm_hidden_size=768, qpls_size=256).to(device)
+    adapter = Miiri_QPLS_Adapter(llm_hidden_size=768, qpls_size=256).to(device)
     optimizer = torch.optim.AdamW(adapter.parameters(), lr=1e-3)
     criterion = nn.MSELoss()
 
@@ -87,9 +87,9 @@ def train_fluent_adapter():
 
     # Sauvegarde des poids réels
     os.makedirs("Dist", exist_ok=True)
-    torch.save(adapter.state_dict(), "Dist/OCM_Real_Adapter.pt")
+    torch.save(adapter.state_dict(), "Dist/Miiri_Real_Adapter.pt")
     print("\n[SUCCESS] Entraînement terminé !")
-    print("[SUCCESS] Poids de l'Adapter sauvegardés dans 'Dist/OCM_Real_Adapter.pt'.")
+    print("[SUCCESS] Poids de l'Adapter sauvegardés dans 'Dist/Miiri_Real_Adapter.pt'.")
     print("Le modèle est maintenant fluent en anglais ET greffé sur l'espace Mentalese.")
 
 if __name__ == "__main__":

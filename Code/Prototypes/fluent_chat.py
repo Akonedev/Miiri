@@ -1,6 +1,6 @@
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
-from train_fluent_ocm import OCM_QPLS_Adapter
+from train_fluent_miiri import Miiri_QPLS_Adapter
 import sys
 import time
 
@@ -46,9 +46,9 @@ def main():
     base_model = AutoModelForCausalLM.from_pretrained("distilgpt2").to(device)
     
     print("[SYSTEM] Loading Trained Miiri-QPLS Adapter weights...")
-    adapter = OCM_QPLS_Adapter(llm_hidden_size=768, qpls_size=256).to(device)
+    adapter = Miiri_QPLS_Adapter(llm_hidden_size=768, qpls_size=256).to(device)
     try:
-        adapter.load_state_dict(torch.load("Dist/OCM_Real_Adapter.pt"))
+        adapter.load_state_dict(torch.load("Dist/Miiri_Real_Adapter.pt"))
         print("[OK] Adapter Weights loaded. Verification Gate active.")
     except Exception as e:
         print(f"[ERROR] Could not load adapter: {e}")

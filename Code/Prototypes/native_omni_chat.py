@@ -30,7 +30,7 @@ def main():
     
     print("[SYSTEM] Loading Native Unified Weights...")
     try:
-        checkpoint = torch.load("Dist/OCM_Native_Unified.pt", map_location=device)
+        checkpoint = torch.load("Dist/Miiri_Native_Unified.pt", map_location=device)
         core.load_state_dict(checkpoint['reasoning_core'])
         decoder.load_state_dict(checkpoint['omni_decoder'])
         print("[OK] Native Weights loaded. Symbolic Gate and Omni-Decoder active.")
