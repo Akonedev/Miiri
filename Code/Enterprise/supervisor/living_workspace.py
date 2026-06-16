@@ -6,58 +6,69 @@ import time
 class LivingGlobalWorkspace(nn.Module):
     """
     Port 26400: Le Superviseur Vivant.
-    Gère la conscience de soi (incertitude épistémique), 
-    la synthèse en arrière-plan et l'allocation dynamique de capacité.
+    Met en œuvre les exigences de Besoins/Tests.md :
+    - Évaluation de l'ignorance (Incertitude Épistémique).
+    - Gestion de l'Apprentissage (Auto vs Supervisé).
+    - Mise à jour en temps réel de la mémoire Sémantique (Dictionaries).
     """
-    def __init__(self, d_model=256):
+    def __init__(self, d_model=256, learning_mode="auto"):
         super(LivingGlobalWorkspace, self).__init__()
         self.d_model = d_model
-        self.is_synthesizing = True
+        assert learning_mode in ["auto", "supervised"], "learning_mode must be 'auto' or 'supervised'"
+        self.learning_mode = learning_mode
         self.knowledge_graph_size = 0
         
-        # Thread de synthèse en arrière-plan (Apprentissage Live)
-        self.bg_thread = threading.Thread(target=self._background_synthesis_loop)
-        self.bg_thread.daemon = True
-        self.bg_thread.start()
-
+        # Memory instances to be updated live
+        self.semantic_memory = {}
+        
     def evaluate_epistemic_uncertainty(self, qpls_vector):
         """
         Analyse si le modèle 'sait' ou 'ne sait pas'.
-        Met à jour ou lit la dimension 255 (Incertitude) du Mentalese.
+        Lit la dimension 255 (Incertitude) du Mentalese.
         """
-        # Dans un vrai système, on calcule la variance de l'ensemble (Ensemble Variance)
-        # ou la distance aux clusters connus dans la mémoire sémantique.
         uncertainty_score = qpls_vector[..., 255].item()
         
         if uncertainty_score > 0.85:
-            print("[CONSCIENCE] Je ne sais pas. Incertitude élevée détectée.")
-            print("[CONSCIENCE] -> Déclenchement de la procédure de Recherche / Tool Use.")
-            return True # Needs Tool Use
+            # Le modèle ne sait pas
+            return True
         return False
 
-    def _background_synthesis_loop(self):
+    def handle_unknown_concept(self, search_results_text, source_urls):
         """
-        Processus asynchrone qui digère les flux de prompts en temps réel.
+        Gère le flux d'apprentissage défini dans Besoins/Tests.md
+        lorsque le modèle fait face à un concept inconnu.
         """
-        while self.is_synthesizing:
-            time.sleep(5) # Simule le cycle de digestion asynchrone
-            self.knowledge_graph_size += 1
-            # print(f"\n[BACKGROUND SYNTHESIS] Consolidation de l'expérience... Graphe étendu à {self.knowledge_graph_size} noeuds.")
+        print(f"\n[WORKSPACE] Données de recherche acquises depuis : {source_urls}")
+        
+        if self.learning_mode == "auto":
+            print("[WORKSPACE] Mode Apprentissage: AUTO. Assimilation immédiate...")
+            self._commit_to_memory(search_results_text)
+            return True
             
-    def trigger_dynamic_growth(self, current_capacity):
-        """
-        Évalue si le modèle sature et demande l'allocation de nouveaux experts (MoE).
-        """
-        print(f"[CROISSANCE] Saturation détectée. Allocation dynamique de nouveaux paramètres...")
-        new_capacity = current_capacity * 1.5
-        print(f"[CROISSANCE] Capacité du modèle étendue à {new_capacity:.1f} experts.")
-        return new_capacity
+        elif self.learning_mode == "supervised":
+            print("[WORKSPACE] Mode Apprentissage: SUPERVISÉ. En attente de validation utilisateur...")
+            # Simulation of a UI Button click requirement
+            user_input = input(">> [SYSTEM_PROMPT] Voulez-vous que le modèle apprenne ces informations ? (y/n) : ")
+            if user_input.lower() == 'y':
+                print("[WORKSPACE] Apprentissage Validé par l'utilisateur. Assimilation...")
+                self._commit_to_memory(search_results_text)
+                return True
+            else:
+                print("[WORKSPACE] Apprentissage Refusé. Les données sont purgées de la mémoire de travail.")
+                return False
 
-if __name__ == "__main__":
-    print("--- Test du Système Vivant ---")
-    workspace = LivingGlobalWorkspace()
-    test_vector = torch.zeros(1, 1, 256)
-    
-    workspace.evaluate_epistemic_uncertainty(test_vector)
-    time.sleep(6) # Laisse le temps au thread de synthèse de faire un cycle
-    workspace.trigger_dynamic_growth(100)
+    def _commit_to_memory(self, text_data):
+        """
+        Convertit le texte brut en primitives (Grammaire, Phonologie, Sémantique)
+        et l'intègre définitivement (Zéro-Shot) pour les questions futures.
+        Ceci est l'implémentation de "Capturer en une fois, en même temps".
+        """
+        # Dans un vrai système, cela passe par le Native Patch Embedder & Text Tokenizer.
+        # Ici on simule l'ajout pur à la base de connaissance active.
+        self.semantic_memory["latest_learned_fact"] = text_data
+        self.knowledge_graph_size += 1
+        print("[WORKSPACE] 🧠 Graphe de connaissance mis à jour (Zéro-Shot).")
+
+    def query_semantic_memory(self):
+        """Returns the most recently learned fact for testing recall."""
+        return self.semantic_memory.get("latest_learned_fact", None)
