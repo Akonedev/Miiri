@@ -10,7 +10,7 @@ from Code.Training.train_fluent_ocm import OCM_QPLS_Adapter
 
 def generate_response(prompt, tokenizer, base_model, adapter, device):
     """
-    Fonction de génération utilisant le modèle de base et l'Adapter OCM
+    Fonction de génération utilisant le modèle de base et l'Adapter Miiri
     """
     inputs = tokenizer(prompt, return_tensors="pt").to(device)
     
@@ -35,7 +35,7 @@ def generate_response(prompt, tokenizer, base_model, adapter, device):
 
 def test_chat():
     print("==================================================")
-    print(" DÉMARRAGE DU TEST AUTONOME : OCM-26400 CHAT")
+    print(" DÉMARRAGE DU TEST AUTONOME : Miiri-256 CHAT")
     print("==================================================")
     
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -45,11 +45,11 @@ def test_chat():
     tokenizer = AutoTokenizer.from_pretrained("distilgpt2")
     base_model = AutoModelForCausalLM.from_pretrained("distilgpt2").to(device)
     
-    # 2. Charger les Poids Entraînés de l'Adapter (Le Filtre OCM)
+    # 2. Charger les Poids Entraînés de l'Adapter (Le Filtre Miiri)
     adapter = OCM_QPLS_Adapter(llm_hidden_size=768, qpls_size=256).to(device)
     try:
         adapter.load_state_dict(torch.load("Dist/OCM_Real_Adapter.pt", map_location=device))
-        print("[*] Succès: Poids de l'Adapter OCM chargés.")
+        print("[*] Succès: Poids de l'Adapter Miiri chargés.")
     except Exception as e:
         print(f"[ERREUR] Impossible de charger les poids : {e}")
         return
@@ -68,7 +68,7 @@ def test_chat():
         
         response = generate_response(prompt, tokenizer, base_model, adapter, device)
         
-        print(f"[OCM-26400] > {response}")
+        print(f"[Miiri-256] > {response}")
 
 if __name__ == "__main__":
     test_chat()

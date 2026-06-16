@@ -1,11 +1,11 @@
 # Chapitre 7 : Scaling Laws, Bottlenecks et Axiomes de Performance
-*Analyse Empirique et Théorique des Limites du Modèle OCM-26400*
+*Analyse Empirique et Théorique des Limites du Modèle Miiri-256*
 
-Ce chapitre détaille les lois de mise à l'échelle (Scaling Laws) spécifiques à l'architecture récurrente neuro-symbolique (LSRA). Contrairement aux modèles Transformer classiques (où l'intelligence s'obtient en augmentant les paramètres $P$), le paradigme OCM scale sur la dimension temporelle de l'inférence $N$.
+Ce chapitre détaille les lois de mise à l'échelle (Scaling Laws) spécifiques à l'architecture récurrente neuro-symbolique (LSRA). Contrairement aux modèles Transformer classiques (où l'intelligence s'obtient en augmentant les paramètres $P$), le paradigme Miiri scale sur la dimension temporelle de l'inférence $N$.
 
 ## 7.1 L'Axiome de la Profondeur Infinie ($p_{step} = 1.0 \Rightarrow Depth = \infty$)
 **Découverte :** L'instabilité majeure des Réseaux de Neurones Récurrents (RNN) classiques est l'explosion ou la disparition du gradient et de la norme du vecteur caché sur de longues séquences. 
-Nous avons vérifié empiriquement que dans l'architecture OCM, si la porte de vérification symbolique valide chaque étape de manière déterministe ($p_{step} = 1.0$) et qu'une **Normalisation Spectrale + LayerNorm** est appliquée, l'état latent peut boucler indéfiniment.
+Nous avons vérifié empiriquement que dans l'architecture Miiri, si la porte de vérification symbolique valide chaque étape de manière déterministe ($p_{step} = 1.0$) et qu'une **Normalisation Spectrale + LayerNorm** est appliquée, l'état latent peut boucler indéfiniment.
 
 *   **Preuve Empirique :** Lors d'un benchmark de 100 000 itérations séquentielles sur le *Reasoning Core*, la norme du vecteur QPLS ($d=256$) est restée strictement constante à $16.00$ ($\sqrt{256}$).
 *   **Axiome :** La profondeur de réflexion est infinie et mathématiquement stable tant que l'opérateur récurrent agit comme une "Contraction Mapping" (Théorème du point fixe de Banach).

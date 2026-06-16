@@ -3,7 +3,7 @@ import torch.nn as nn
 
 class NativeOmniDecoder(nn.Module):
     """
-    Native Unified Omni-Decoder pour l'architecture OCM-26400.
+    Native Unified Omni-Decoder pour l'architecture Miiri-256.
     Ce décodeur n'est PAS un modèle externe (pas de Stable Diffusion).
     Il prend le vecteur QPLS (d=256) validé causalement et le projette 
     directement sur le vocabulaire unifié (Mots, Patchs Image, Trames Audio).
@@ -33,7 +33,7 @@ class NativeOmniDecoder(nn.Module):
 
 def simulate_omni_generation():
     print("==================================================")
-    print(" 🌍 OCM-26400 : NATIVE UNIFIED OMNI-GENERATION")
+    print(" 🌍 Miiri-256 : NATIVE UNIFIED OMNI-GENERATION")
     print("==================================================")
     
     decoder = NativeOmniDecoder(d_model=256)

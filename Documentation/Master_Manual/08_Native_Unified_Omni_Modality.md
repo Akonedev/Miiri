@@ -1,10 +1,10 @@
 # Chapitre 8 : Native Unified Omni-Modality (Zéro "Frankenstein")
 
-*Axiome fondamental : L'OCM-26400 n'est pas un assemblage de modèles. Il est UNIFIÉ de bout en bout.*
+*Axiome fondamental : L'Miiri-256 n'est pas un assemblage de modèles. Il est UNIFIÉ de bout en bout.*
 
 ## 8.1 L'Anti-Pattern "Frankenstein"
 La majorité des architectures prétendument multimodales de 2023-2024 utilisent une approche "Late Fusion" (Frankenstein). Elles utilisent un LLM pour le texte, puis l'utilisent comme "prompteur" pour piloter un modèle externe (comme Stable Diffusion ou Midjourney) pour générer l'image.
-**Pourquoi c'est inacceptable pour OCM-26400 :**
+**Pourquoi c'est inacceptable pour Miiri-256 :**
 1. **Perte de Rigueur Causale :** Si le LLM demande à Stable Diffusion de générer "une pomme qui tombe à 9.8m/s²", le modèle de diffusion ne *comprend* pas la physique. Il va halluciner des pixels qui "ressemblent" à une chute.
 2. **Latence et Déconnexion :** Le passage par des modèles externes détruit le flux du *Test-Time Compute*. L'espace latent n'est plus partagé.
 

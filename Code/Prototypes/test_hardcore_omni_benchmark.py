@@ -15,7 +15,7 @@ def type_effect(text, delay=0.01):
 
 class HardcoreOmniBenchmark:
     """
-    Banc d'essai extrême pour l'architecture OCM-26400.
+    Banc d'essai extrême pour l'architecture Miiri-256.
     Simule et valide les capacités multimodales, l'utilisation d'outils,
     et l'apprentissage autonome.
     """
@@ -58,19 +58,19 @@ class HardcoreOmniBenchmark:
         
         # Responses
         if modality == "CODE_GEN":
-            type_effect("OCM > ```python\ndef solve_navier_stokes():\n    # Solving fluid dynamics deterministically\n    pass\n```")
+            type_effect("Miiri > ```python\ndef solve_navier_stokes():\n    # Solving fluid dynamics deterministically\n    pass\n```")
         elif modality == "IMAGE_OUT":
-            type_effect("OCM > [PIXEL_PATCH_STREAM] -> <Génération Image: Trou Noir avec accrétion correcte physiquement>")
+            type_effect("Miiri > [PIXEL_PATCH_STREAM] -> <Génération Image: Trou Noir avec accrétion correcte physiquement>")
         elif modality == "VIDEO_OUT":
-            type_effect("OCM > [VIDEO_FRAME_STREAM] -> <Génération Vidéo: Simulation Météo 4K (Conservation de l'énergie respectée)>")
+            type_effect("Miiri > [VIDEO_FRAME_STREAM] -> <Génération Vidéo: Simulation Météo 4K (Conservation de l'énergie respectée)>")
         elif modality == "AUDIO_MUSIC_OUT":
-            type_effect("OCM > [WAVEFORM_STREAM] -> <Génération Audio: Symphonie générée selon les lois harmoniques de Bach>")
+            type_effect("Miiri > [WAVEFORM_STREAM] -> <Génération Audio: Symphonie générée selon les lois harmoniques de Bach>")
         elif modality == "3D_WORLD_OUT":
-            type_effect("OCM > [SCENE_GRAPH_STREAM] -> <Génération 3D: Moteur de jeu interactif rendu en temps réel>")
+            type_effect("Miiri > [SCENE_GRAPH_STREAM] -> <Génération 3D: Moteur de jeu interactif rendu en temps réel>")
         elif modality == "RAG_SUMMARIZE":
-            type_effect("OCM > [TEXT] Résumé: L'architecture OCM unifie la perception et l'action via le Mentalese, éliminant les hallucinations grâce à la vérification symbolique.")
+            type_effect("Miiri > [TEXT] Résumé: L'architecture Miiri unifie la perception et l'action via le Mentalese, éliminant les hallucinations grâce à la vérification symbolique.")
         else:
-            type_effect(f"OCM > [TEXT] Réponse générée avec succès pour le prompt.")
+            type_effect(f"Miiri > [TEXT] Réponse générée avec succès pour le prompt.")
 
     def _execute_tool(self, tool_action):
         self.metrics["tool_use_success"] += 1
@@ -78,7 +78,7 @@ class HardcoreOmniBenchmark:
             type_effect("  -> [ACTION_COMPUTER] Déplacement souris (X:450, Y:300) -> Clic Gauche.")
         elif "MCP" in tool_action:
             type_effect("  -> [ACTION_MCP] Requête à la base de données locale (SQL_QUERY).")
-            type_effect("OCM > [TEXT] Résultats de la base de données analysés avec succès.")
+            type_effect("Miiri > [TEXT] Résultats de la base de données analysés avec succès.")
 
     def _autonomous_web_learning(self, prompt):
         type_effect("  -> [ACTION_BROWSER] Ouverture de SearXNG local...")
@@ -87,11 +87,11 @@ class HardcoreOmniBenchmark:
         type_effect("  -> [BACKGROUND_SYNTHESIS] Digestion du contenu, création des primitives causales...")
         time.sleep(1)
         self.knowledge_base["new_skill"] = True
-        type_effect("OCM > [TEXT] Contenu de la page lu, compris, et intégré à mon dictionnaire sémantique. Je suis prêt à l'appliquer.")
+        type_effect("Miiri > [TEXT] Contenu de la page lu, compris, et intégré à mon dictionnaire sémantique. Je suis prêt à l'appliquer.")
 
     def print_report(self):
         print("\n" + "="*50)
-        print(" 📊 OCM-26400 : BENCHMARK & STRESS-TEST REPORT")
+        print(" 📊 Miiri-256 : BENCHMARK & STRESS-TEST REPORT")
         print("="*50)
         avg_depth = sum(self.metrics["reasoning_depth"]) / len(self.metrics["reasoning_depth"]) if self.metrics["reasoning_depth"] else 0
         print(f"-> Capacités Multimodales : 100% Unifiées (Aucun modèle externe utilisé)")
@@ -104,7 +104,7 @@ class HardcoreOmniBenchmark:
 if __name__ == "__main__":
     benchmark = HardcoreOmniBenchmark()
     print("==================================================")
-    print(" 🚀 LANCEMENT DU HARDCORE OMNI-BENCHMARK OCM-26400")
+    print(" 🚀 LANCEMENT DU HARDCORE OMNI-BENCHMARK Miiri-256")
     print("==================================================")
     
     benchmark.execute_test("Génération de Code (React/Python)", "Génère un composant React avec un backend Python optimisé.", "CODE_GEN", "NONE", "hardcore")

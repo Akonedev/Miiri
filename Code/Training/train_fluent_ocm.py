@@ -4,7 +4,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 import os
 import sys
 
-# Simulation d'un Adapter OCM-QPLS (Neuro-Symbolic Distillation)
+# Simulation d'un Adapter Miiri-QPLS (Neuro-Symbolic Distillation)
 # Ce script télécharge un modèle linguistique rapide (distilgpt2), fige son cortex
 # et entraîne un goulot d'étranglement (Adapter) qui projette les pensées vers l'espace Mentalese (256d)
 # avant de générer la réponse en anglais fluide.
@@ -29,7 +29,7 @@ class OCM_QPLS_Adapter(nn.Module):
 
 def train_fluent_adapter():
     print("=======================================================")
-    print("🚀 OCM-26400 : ENTRAÎNEMENT DU CORTEX LINGUISTIQUE (ADAPTER)")
+    print("🚀 Miiri-256 : ENTRAÎNEMENT DU CORTEX LINGUISTIQUE (ADAPTER)")
     print("=======================================================")
     
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -46,7 +46,7 @@ def train_fluent_adapter():
     for param in base_model.parameters():
         param.requires_grad = False
         
-    print("[*] Cortex linguistique figé. Initialisation de l'Adapter OCM-QPLS (768 -> 256 -> 768)...")
+    print("[*] Cortex linguistique figé. Initialisation de l'Adapter Miiri-QPLS (768 -> 256 -> 768)...")
     adapter = OCM_QPLS_Adapter(llm_hidden_size=768, qpls_size=256).to(device)
     optimizer = torch.optim.AdamW(adapter.parameters(), lr=1e-3)
     criterion = nn.MSELoss()
@@ -72,7 +72,7 @@ def train_fluent_adapter():
                 outputs = base_model(**inputs, output_hidden_states=True)
                 hidden_states = outputs.hidden_states[-1] # Dernière couche
             
-            # Passer par l'Adapter OCM (Le filtre de vérité)
+            # Passer par l'Adapter Miiri (Le filtre de vérité)
             adapted_hidden = adapter(hidden_states)
             
             # La Loss force l'adapter à restituer le concept sans perdre l'information de base

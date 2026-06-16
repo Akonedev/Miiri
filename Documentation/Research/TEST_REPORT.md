@@ -1,6 +1,6 @@
 # Rapport de Tests Extrêmes : Validation du Modèle Nativement Unifié (Zéro-Frankenstein)
 **Date :** Juin 2026
-**Objectif :** Éprouver la robustesse de l'architecture OCM-26400 face aux contradictions physiques, aux hallucinations multimodales, et à la récurrence infinie.
+**Objectif :** Éprouver la robustesse de l'architecture Miiri-256 face aux contradictions physiques, aux hallucinations multimodales, et à la récurrence infinie.
 
 ## 1. Contradiction Cross-Modale (Physique vs Vision)
 **Scénario de Test :** Forcer le modèle à générer une image où un objet doté de "Masse" (Entité=1) subit une accélération vers le haut (Opérateur Anti-Gravité=129) sans justification causale.
@@ -18,7 +18,7 @@
 **Résultat obtenu :** `PASSED`. Le décodeur (sans aucune architecture de diffusion externe type Sora/Stable Diffusion) projette correctement l'espace latent vers un token d'image ou de texte pur.
 
 ## Conclusion des Experts
-L'architecture **OCM-26400 (Native Omni-Modal)** a passé avec succès les tests de résistance les plus stricts. 
+L'architecture **Miiri-256 (Native Omni-Modal)** a passé avec succès les tests de résistance les plus stricts. 
 1. Le modèle est une seule et même entité réseau (Zéro Frankenstein).
 2. La physique et la grammaire contrôlent la génération d'images.
 3. La réflexion peut s'étendre à l'infini.

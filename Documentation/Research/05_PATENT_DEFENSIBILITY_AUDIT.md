@@ -1,11 +1,11 @@
-# Patent Defensibility & Prior Art Audit: OCM-26400
+# Patent Defensibility & Prior Art Audit: Miiri-256
 **Date:** June 2026
 **Confidentiality:** Internal IP Strategy Document
 
 ## 1. Executive Summary of Freedom to Operate (FTO)
-Following a deep audit of US Patents and academic literature (NeurIPS, ICLR) from 2023 to early 2026, we have established the patent boundaries for the OCM-26400 architecture. 
+Following a deep audit of US Patents and academic literature (NeurIPS, ICLR) from 2023 to early 2026, we have established the patent boundaries for the Miiri-256 architecture. 
 
-The intersection of "Recurrent Depth", "Latent Reasoning", and "Symbolic Verification" is highly active. The primary "blocking" prior art is **Geiping et al. (2025) "Huginn"** and **Hao et al. (2024) "COCONUT"**. However, OCM-26400 possesses distinct, defensible novelties that carve out a strong Freedom to Operate (FTO) and patentable claims.
+The intersection of "Recurrent Depth", "Latent Reasoning", and "Symbolic Verification" is highly active. The primary "blocking" prior art is **Geiping et al. (2025) "Huginn"** and **Hao et al. (2024) "COCONUT"**. However, Miiri-256 possesses distinct, defensible novelties that carve out a strong Freedom to Operate (FTO) and patentable claims.
 
 ## 2. Competitive Landscape & Prior Art
 
@@ -21,7 +21,7 @@ The intersection of "Recurrent Depth", "Latent Reasoning", and "Symbolic Verific
 
 ---
 
-## 3. The OCM-26400 Defensible Moat (Our Patent Claims)
+## 3. The Miiri-256 Defensible Moat (Our Patent Claims)
 
 Our IP strategy relies on the **Hardware/Software Integration** and the **Micro-Architectural specificities** that prior art failed to anticipate. 
 
@@ -44,7 +44,7 @@ Our IP strategy relies on the **Hardware/Software Integration** and the **Micro-
 Because the base concept of latent reasoning (Huginn) is public, our monetization must focus on the proprietary **Symbolic Verification Gate**. 
 
 *   **Open Source Strategy (The Lure):** We open-source the QPLS vector specification and the Sensory Encoders (Ports 26401-26404). This encourages the developer ecosystem to adopt the Mentalese format.
-*   **Enterprise Licensing (The Hook):** We license the Semantic Dictionary (Port 26412) and the ACSP-trained Reasoning Core (Ports 26415-26418) to high-stakes industries. A bank or hospital doesn't just want "latent reasoning" (which Huginn can do); they want **Verified Latent Reasoning** (which only OCM-26400 can guarantee via the LSRA gate).
+*   **Enterprise Licensing (The Hook):** We license the Semantic Dictionary (Port 26412) and the ACSP-trained Reasoning Core (Ports 26415-26418) to high-stakes industries. A bank or hospital doesn't just want "latent reasoning" (which Huginn can do); they want **Verified Latent Reasoning** (which only Miiri-256 can guarantee via the LSRA gate).
 
 ## 5. Next Actions for IP Counsel
 1.  Draft claims focusing on the **ZeroMQ IPC integration** between the continuous recurrent layer and the discrete symbolic solver.

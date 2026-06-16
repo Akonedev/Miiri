@@ -34,7 +34,7 @@ def run_node():
         socket.bind(f"tcp://*:{PORT}")
         print(f"[{LOBE_ID}] Lobe active (Replier) on port {PORT}")
     
-    print(f"[{LOBE_ID}] OCM-26400 Neural Link Initialized.")
+    print(f"[{LOBE_ID}] Miiri-256 Neural Link Initialized.")
     
     while True:
         try:

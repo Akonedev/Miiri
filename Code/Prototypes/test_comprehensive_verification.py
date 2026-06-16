@@ -19,7 +19,7 @@ def type_effect(text, delay=0.015):
 
 class CognitiveTestBed:
     """
-    Simulateur de Test pour l'architecture OCM-26400 Vivante.
+    Simulateur de Test pour l'architecture Miiri-256 Vivante.
     """
     def __init__(self):
         self.device = torch.device("cpu")
@@ -63,15 +63,15 @@ class CognitiveTestBed:
         
         # 4. Réponses de test
         if concept_key in prompt and concept_key in self.knowledge_base:
-             type_effect(f"[OCM] > (Rappel de Mémoire Épisodique) : {self.knowledge_base[concept_key]}")
+             type_effect(f"[Miiri] > (Rappel de Mémoire Épisodique) : {self.knowledge_base[concept_key]}")
         elif "grammaire" in prompt.lower() or "conjugaison" in prompt.lower():
-             type_effect(f"[OCM] > (Grammaire/Conjugaison) : 'Manger'. Présent: Je mange. Participe: Mangé. Règle: Verbe du 1er groupe, racine 'mang-'.")
+             type_effect(f"[Miiri] > (Grammaire/Conjugaison) : 'Manger'. Présent: Je mange. Participe: Mangé. Règle: Verbe du 1er groupe, racine 'mang-'.")
         elif "synonyme" in prompt.lower() or "nuance" in prompt.lower():
-             type_effect(f"[OCM] > (Sens/Nuance) : 'Vite'. Synonyme: 'Rapidement' (action), 'Véloce' (attribut). Nuance: 'Vite' implique l'urgence temporelle.")
+             type_effect(f"[Miiri] > (Sens/Nuance) : 'Vite'. Synonyme: 'Rapidement' (action), 'Véloce' (attribut). Nuance: 'Vite' implique l'urgence temporelle.")
         elif "reformule" in prompt.lower():
-             type_effect(f"[OCM] > (Génération/Paraphrase) : Phrase originale: 'Le chat noir dort'. Reformulation causale identique: 'Le félin de couleur sombre se repose'.")
+             type_effect(f"[Miiri] > (Génération/Paraphrase) : Phrase originale: 'Le chat noir dort'. Reformulation causale identique: 'Le félin de couleur sombre se repose'.")
         else:
-             type_effect(f"[OCM] > Concept maîtrisé : {prompt}")
+             type_effect(f"[Miiri] > Concept maîtrisé : {prompt}")
 
     def _simulate_autonomous_learning(self, unknown_concept):
         """Simule le Web Search et l'apprentissage continu."""
@@ -86,11 +86,11 @@ class CognitiveTestBed:
         print(f"  ...[Memory Update] Intégration de '{unknown_concept}' dans l'espace QPLS (Dimensions 0-63).")
         self.knowledge_base[unknown_concept] = new_knowledge
         time.sleep(0.5)
-        type_effect("[OCM] > Apprentissage terminé. Je maîtrise désormais ce concept. Reposez votre question.")
+        type_effect("[Miiri] > Apprentissage terminé. Je maîtrise désormais ce concept. Reposez votre question.")
 
 if __name__ == "__main__":
     print("=======================================================")
-    print(" 🧪 TEST DE VÉRIFICATION EXHAUSTIF : OCM-26400 AGI")
+    print(" 🧪 TEST DE VÉRIFICATION EXHAUSTIF : Miiri-256 AGI")
     print("=======================================================")
     
     testbed = CognitiveTestBed()

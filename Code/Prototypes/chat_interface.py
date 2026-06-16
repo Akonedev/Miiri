@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-OCM-26400 : Interface Chat & Omni-Génération (Prototype Bridge)
+Miiri-256 : Interface Chat & Omni-Génération (Prototype Bridge)
 """
 import sys
 import time
@@ -14,7 +14,7 @@ def type_effect(text, delay=0.02):
 
 def main():
     print("\n" + "="*50)
-    print(" 🧠 OCM-26400 OMNI-CHAT INTERFACE (Terminal Mode)")
+    print(" 🧠 Miiri-256 OMNI-CHAT INTERFACE (Terminal Mode)")
     print("="*50)
     print("[SYSTEM] Connecté aux lobes IPC (Ports 26401-26420)...")
     print("[SYSTEM] Chargement des poids depuis Dist/OCM_Auto_Model.pt...")
@@ -47,9 +47,9 @@ def main():
             print("\n  -> Convergence atteinte (Confiance: 0.98)")
             
             print("\n[Port 26420: Action Lobe] Décodage Amodal...")
-            type_effect(f"OCM > [REPONSE SIMULEE] J'ai analysé votre requête '{prompt}'. ")
-            type_effect("OCM > Mon architecture mathématique (LSRA) a validé le chemin causal.")
-            type_effect("OCM > Cependant, je n'ai pas encore ingéré les 10 Téraoctets de vocabulaire anglais ni les millions de vidéos nécessaires pour générer le monde 3D réel.")
+            type_effect(f"Miiri > [REPONSE SIMULEE] J'ai analysé votre requête '{prompt}'. ")
+            type_effect("Miiri > Mon architecture mathématique (LSRA) a validé le chemin causal.")
+            type_effect("Miiri > Cependant, je n'ai pas encore ingéré les 10 Téraoctets de vocabulaire anglais ni les millions de vidéos nécessaires pour générer le monde 3D réel.")
             
         except KeyboardInterrupt:
             break

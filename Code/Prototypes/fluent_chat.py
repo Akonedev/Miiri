@@ -35,7 +35,7 @@ def generate_fluent_response(prompt, tokenizer, base_model, adapter, device):
 
 def main():
     print("\n" + "="*60)
-    print(" 🧠 OCM-26400 : REAL OMNI-CHAT (Fluency & Logic Adapter)")
+    print(" 🧠 Miiri-256 : REAL OMNI-CHAT (Fluency & Logic Adapter)")
     print("="*60)
     
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -45,7 +45,7 @@ def main():
     tokenizer = AutoTokenizer.from_pretrained("distilgpt2")
     base_model = AutoModelForCausalLM.from_pretrained("distilgpt2").to(device)
     
-    print("[SYSTEM] Loading Trained OCM-QPLS Adapter weights...")
+    print("[SYSTEM] Loading Trained Miiri-QPLS Adapter weights...")
     adapter = OCM_QPLS_Adapter(llm_hidden_size=768, qpls_size=256).to(device)
     try:
         adapter.load_state_dict(torch.load("Dist/OCM_Real_Adapter.pt"))
@@ -73,7 +73,7 @@ def main():
             
             response = generate_fluent_response(prompt, tokenizer, base_model, adapter, device)
             
-            type_effect(f"\nOCM-26400 > {response}")
+            type_effect(f"\nMiiri-256 > {response}")
             
         except KeyboardInterrupt:
             break
