@@ -39,22 +39,29 @@ class LSRAReasoningCore(nn.Module):
             entities, properties, operators, metadata = QPLSVector.extract_segments(next_state)
             
             # 2. Symbolic Verification Gate
-            # For this PyTorch simulation, we pass if no gate is provided, 
-            # otherwise we verify. If invalid, ACSP loss will penalize during training.
             if symbolic_gate is not None:
-                # Assuming batch_size=1, seq_len=1 for simple prototype
                 is_legal = symbolic_gate.verify_latent_step(entities[0, 0], operators[0, 0])
                 if not is_legal:
-                    # In inference, we would trigger a backtrack.
-                    # In training, we return the trajectory to compute the penalty loss.
                     trajectories.append(next_state)
                     return torch.stack(trajectories), False # Return False to signal backtrack needed
             
+            # 3. Oscillation/Stagnation Detection (Gödel's Gate Crash Prevention)
+            # If the state repeats or stagnates but confidence is still low, we are in a paradox loop.
+            if t >= 1:
+                prev_state = trajectories[-1]
+                # Compute cosine similarity between current state and previous state
+                cos_sim = torch.nn.functional.cosine_similarity(next_state, prev_state, dim=-1)
+                # If highly similar (stagnating) and confidence is low, break early
+                confidence = torch.sigmoid(metadata[0, 0, 0]).item()
+                if cos_sim.item() > 0.95 and confidence < self.grok_threshold:
+                    print("[WARNING] Stagnation Épistémique détectée (Paradoxe). Arrêt d'urgence du LSRA.")
+                    trajectories.append(next_state)
+                    return torch.stack(trajectories), False # Fail the thought process
+
             trajectories.append(next_state)
             current_state = next_state
             
-            # 3. Check Convergence (Metadata dimension 0 is confidence)
-            # Sigmoid used to constrain confidence between 0 and 1
+            # 4. Check Convergence
             confidence = torch.sigmoid(metadata[0, 0, 0]).item()
             if confidence >= self.grok_threshold:
                 break
