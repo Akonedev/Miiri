@@ -89,7 +89,7 @@ def run_512_resonance_benchmark(device):
 
 if __name__ == "__main__":
     print("==================================================")
-    print(" EXTREME SCALING BENCHMARK : Miiri-256")
+    print(" EXTREME SCALING BENCHMARK : Miiri")
     print("==================================================")
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"[*] Target Device: {device}")

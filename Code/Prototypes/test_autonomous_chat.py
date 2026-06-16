@@ -35,7 +35,7 @@ def generate_response(prompt, tokenizer, base_model, adapter, device):
 
 def test_chat():
     print("==================================================")
-    print(" DÉMARRAGE DU TEST AUTONOME : Miiri-256 CHAT")
+    print(" DÉMARRAGE DU TEST AUTONOME : Miiri CHAT")
     print("==================================================")
     
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -68,7 +68,7 @@ def test_chat():
         
         response = generate_response(prompt, tokenizer, base_model, adapter, device)
         
-        print(f"[Miiri-256] > {response}")
+        print(f"[Miiri] > {response}")
 
 if __name__ == "__main__":
     test_chat()

@@ -109,7 +109,7 @@ class LSRA_Core:
 
 if __name__ == "__main__":
     print("==================================================")
-    print(" Prototype Miiri-256 : LSRA & Symbolic Verification")
+    print(" Prototype Miiri : LSRA & Symbolic Verification")
     print("==================================================")
     
     # Initialisation

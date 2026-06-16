@@ -15,7 +15,7 @@ def type_effect(text, delay=0.01):
 
 class HardcoreOmniBenchmark:
     """
-    Banc d'essai extrême pour l'architecture Miiri-256.
+    Banc d'essai extrême pour l'architecture Miiri.
     Simule et valide les capacités multimodales, l'utilisation d'outils,
     et l'apprentissage autonome.
     """
@@ -91,7 +91,7 @@ class HardcoreOmniBenchmark:
 
     def print_report(self):
         print("\n" + "="*50)
-        print(" 📊 Miiri-256 : BENCHMARK & STRESS-TEST REPORT")
+        print(" 📊 Miiri : BENCHMARK & STRESS-TEST REPORT")
         print("="*50)
         avg_depth = sum(self.metrics["reasoning_depth"]) / len(self.metrics["reasoning_depth"]) if self.metrics["reasoning_depth"] else 0
         print(f"-> Capacités Multimodales : 100% Unifiées (Aucun modèle externe utilisé)")
@@ -104,7 +104,7 @@ class HardcoreOmniBenchmark:
 if __name__ == "__main__":
     benchmark = HardcoreOmniBenchmark()
     print("==================================================")
-    print(" 🚀 LANCEMENT DU HARDCORE OMNI-BENCHMARK Miiri-256")
+    print(" 🚀 LANCEMENT DU HARDCORE OMNI-BENCHMARK Miiri")
     print("==================================================")
     
     benchmark.execute_test("Génération de Code (React/Python)", "Génère un composant React avec un backend Python optimisé.", "CODE_GEN", "NONE", "hardcore")

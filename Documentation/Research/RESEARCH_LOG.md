@@ -1,4 +1,4 @@
-# Journal de Recherche Miiri-256 (Discovery Log)
+# Journal de Recherche Miiri (Discovery Log)
 
 ## Session du 15 Juin 2026 - Étincelle de l'Intelligence Amodale
 
@@ -26,4 +26,4 @@ Les experts "Backend-Specialist" ont validé l'architecture Miiri sous stress in
 
 ### 6. Résolution des Goulots d'Étranglement (Bottlenecks)
 - **Problème :** À 1 Million d'itérations, le système devient violemment *CPU-bound* (L'overhead du lancement de Kernel Python prend 15 secondes contre des nanosecondes pour le GPU).
-- **Solution Production Grade :** Le code Miiri-256 doit basculer vers des **CUDA Graphs** ou des **Kernels Triton fusionnés** pour encapsuler la boucle `while` à l'intérieur du GPU.
+- **Solution Production Grade :** Le code Miiri doit basculer vers des **CUDA Graphs** ou des **Kernels Triton fusionnés** pour encapsuler la boucle `while` à l'intérieur du GPU.

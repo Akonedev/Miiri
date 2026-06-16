@@ -70,7 +70,7 @@ def run_omni_curriculum():
     Objectif: Créer un modèle fluent en English, Math, Physics, Generative 3D.
     """
     print("==================================================")
-    print(" 🌍 DÉMARRAGE DE LA FORGE OMNI-MODALE Miiri-256")
+    print(" 🌍 DÉMARRAGE DE LA FORGE OMNI-MODALE Miiri")
     print("==================================================")
     
     # Import the Native Decoder locally to avoid circular imports during refactoring

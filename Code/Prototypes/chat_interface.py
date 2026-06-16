@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Miiri-256 : Interface Chat & Omni-Génération (Prototype Bridge)
+Miiri : Interface Chat & Omni-Génération (Prototype Bridge)
 """
 import sys
 import time
@@ -14,7 +14,7 @@ def type_effect(text, delay=0.02):
 
 def main():
     print("\n" + "="*50)
-    print(" 🧠 Miiri-256 OMNI-CHAT INTERFACE (Terminal Mode)")
+    print(" 🧠 Miiri OMNI-CHAT INTERFACE (Terminal Mode)")
     print("="*50)
     print("[SYSTEM] Connecté aux lobes IPC (Ports 26401-26420)...")
     print("[SYSTEM] Chargement des poids depuis Dist/OCM_Auto_Model.pt...")

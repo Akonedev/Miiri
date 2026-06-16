@@ -1,7 +1,7 @@
-# Architecture Miiri-256 (Architecture Miiri (Pensée Unifiée))
+# Architecture Miiri (Architecture Miiri (Pensée Unifiée))
 
 ## 1. Vision et Objectifs
-Le projet Miiri-256 vise à créer une architecture IA de nouvelle génération qui ne repose plus sur la prédiction probabiliste (devinette) mais sur la **restitution causale par application de règles**.
+Le projet Miiri vise à créer une architecture IA de nouvelle génération qui ne repose plus sur la prédiction probabiliste (devinette) mais sur la **restitution causale par application de règles**.
 
 ### Principes Fondamentaux
 - **Mentalese (Langage de la Pensée) :** Un espace latent explicite ($d=256$) et amodal.

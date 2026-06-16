@@ -35,7 +35,7 @@ def generate_fluent_response(prompt, tokenizer, base_model, adapter, device):
 
 def main():
     print("\n" + "="*60)
-    print(" 🧠 Miiri-256 : REAL OMNI-CHAT (Fluency & Logic Adapter)")
+    print(" 🧠 Miiri : REAL OMNI-CHAT (Fluency & Logic Adapter)")
     print("="*60)
     
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -73,7 +73,7 @@ def main():
             
             response = generate_fluent_response(prompt, tokenizer, base_model, adapter, device)
             
-            type_effect(f"\nMiiri-256 > {response}")
+            type_effect(f"\nMiiri > {response}")
             
         except KeyboardInterrupt:
             break

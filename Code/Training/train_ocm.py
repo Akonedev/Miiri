@@ -15,11 +15,11 @@ from Code.Enterprise.data.dataset import NeuroSymbolicPrimitiveDataset, qpls_col
 
 def run_training_epoch():
     """
-    Simulation of the 'Grokking' training loop for Miiri-256.
+    Simulation of the 'Grokking' training loop for Miiri.
     This script is production-ready for deployment on a GPU cluster.
     """
     print("==================================================")
-    print(" DÉMARRAGE DE LA BOUCLE D'ENTRAÎNEMENT Miiri-256")
+    print(" DÉMARRAGE DE LA BOUCLE D'ENTRAÎNEMENT Miiri")
     print("==================================================")
     
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

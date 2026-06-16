@@ -29,7 +29,7 @@ class OCM_QPLS_Adapter(nn.Module):
 
 def train_fluent_adapter():
     print("=======================================================")
-    print("🚀 Miiri-256 : ENTRAÎNEMENT DU CORTEX LINGUISTIQUE (ADAPTER)")
+    print("🚀 Miiri : ENTRAÎNEMENT DU CORTEX LINGUISTIQUE (ADAPTER)")
     print("=======================================================")
     
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

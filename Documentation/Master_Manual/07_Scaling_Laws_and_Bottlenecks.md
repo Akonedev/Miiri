@@ -1,5 +1,5 @@
 # Chapitre 7 : Scaling Laws, Bottlenecks et Axiomes de Performance
-*Analyse Empirique et Théorique des Limites du Modèle Miiri-256*
+*Analyse Empirique et Théorique des Limites du Modèle Miiri*
 
 Ce chapitre détaille les lois de mise à l'échelle (Scaling Laws) spécifiques à l'architecture récurrente neuro-symbolique (LSRA). Contrairement aux modèles Transformer classiques (où l'intelligence s'obtient en augmentant les paramètres $P$), le paradigme Miiri scale sur la dimension temporelle de l'inférence $N$.
 

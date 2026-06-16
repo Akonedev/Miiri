@@ -44,13 +44,13 @@ def main():
         print(f"[ERREUR] L'authentification a échoué. Le token est-il valide ? {e}")
         return
 
-    print("[*] Création du dépôt public Miiri-256 sur GitHub...")
+    print("[*] Création du dépôt public Miiri sur GitHub...")
     repo_req = urllib.request.Request("https://api.github.com/user/repos", method="POST")
     repo_req.add_header("Authorization", f"token {token}")
     repo_req.add_header("Content-Type", "application/json")
     payload = json.dumps({
-        "name": "Miiri-256",
-        "description": "Architecture Miiri (Pensée Unifiée) (Miiri-256) - Native Unified AGI Architecture",
+        "name": "Miiri",
+        "description": "Architecture Miiri (Pensée Unifiée) (Miiri) - Native Unified AGI Architecture",
         "private": False
     }).encode('utf-8')
     
@@ -65,8 +65,8 @@ def main():
             return
             
     print("[*] Configuration du remote et push du code...")
-    push_url = f"https://{username}:{token}@github.com/{username}/Miiri-256.git"
-    clean_url = f"https://github.com/{username}/Miiri-256.git"
+    push_url = f"https://{username}:{token}@github.com/{username}/Miiri.git"
+    clean_url = f"https://github.com/{username}/Miiri.git"
     
     try:
         subprocess.run(["git", "remote", "remove", "origin"], stderr=subprocess.DEVNULL)
@@ -80,7 +80,7 @@ def main():
         subprocess.run(["git", "push", "-u", "origin", "main"], check=True)
         # Clean remote url
         subprocess.run(["git", "remote", "set-url", "origin", clean_url], check=True)
-        print("\n[SUCCESS] ✨ Tout le code de l'architecture Miiri-256 a été poussé sur votre GitHub avec succès !")
+        print("\n[SUCCESS] ✨ Tout le code de l'architecture Miiri a été poussé sur votre GitHub avec succès !")
         print(f"URL de votre dépôt : {clean_url}")
     except subprocess.CalledProcessError as e:
         print(f"\n[ERREUR] Le git push a échoué. ({e})")

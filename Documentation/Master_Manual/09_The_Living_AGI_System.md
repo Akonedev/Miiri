@@ -1,10 +1,10 @@
 # Chapitre 9 : Le Système "Vivant" (Living AGI), Orchestration Multi-Agents et Usage d'Outils
 
 *Mise à jour majeure suite à l'audit de conformité AGI.*
-Ce chapitre détaille comment l'Miiri-256 passe d'un simple modèle statique à un **organisme cognitif vivant**, évolutif, et capable d'interagir physiquement avec le monde numérique (Browser/Computer Use). L'axiome fondamental reste : **Aucune architecture Frankenstein. Tout est nativement unifié dans le Mentalese.**
+Ce chapitre détaille comment l'Miiri passe d'un simple modèle statique à un **organisme cognitif vivant**, évolutif, et capable d'interagir physiquement avec le monde numérique (Browser/Computer Use). L'axiome fondamental reste : **Aucune architecture Frankenstein. Tout est nativement unifié dans le Mentalese.**
 
 ## 9.1 L'Évolution Dynamique (Dynamic Sizing & Living Capacity)
-Les modèles classiques ont une taille fixe (ex: 70 Milliards de paramètres). L'Miiri-256 introduit la **Croissance Paramétrique Dynamique**.
+Les modèles classiques ont une taille fixe (ex: 70 Milliards de paramètres). L'Miiri introduit la **Croissance Paramétrique Dynamique**.
 *   **Le Principe :** Le modèle n'a pas de taille fixe. Au fur et à mesure qu'il apprend en continu, s'il détecte que son espace latent ($d=256$) ou son cluster de récurrence (LSRA) sature (interférences entre les règles causales), l'Orchestrateur (Port 26400) **alloue automatiquement de nouveaux experts (Mixture of Experts - MoE) à la volée**, tant que les ressources matérielles (GPU/RAM) le permettent.
 *   **Résultat :** C'est un modèle "vivant". Il grandit physiquement en fonction de ce qu'il ingère, comme un réseau synaptique humain.
 

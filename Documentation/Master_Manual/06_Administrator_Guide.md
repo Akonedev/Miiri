@@ -1,6 +1,6 @@
 # Chapitre 6 : Guide de l'Administrateur Système (MLOps)
 
-L'administration du modèle Miiri-256 repose sur l'orchestration des micro-services via ZeroMQ et Docker.
+L'administration du modèle Miiri repose sur l'orchestration des micro-services via ZeroMQ et Docker.
 
 ## 6.1 Déploiement et Sécurité
 - Le système ne doit jamais exposer les ports IPC 26400-26420 à l'extérieur.

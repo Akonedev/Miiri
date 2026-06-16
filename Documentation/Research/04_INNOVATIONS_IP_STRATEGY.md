@@ -1,10 +1,10 @@
 # Intellectual Property, Naming & Monetization Strategy
 
-This document details the unique discoveries made during the development of the Miiri-256 architecture, their official "baptized" names, and the strategic pathways for patenting and monetizing these foundational technologies in the 2024-2026 AI landscape.
+This document details the unique discoveries made during the development of the Miiri architecture, their official "baptized" names, and the strategic pathways for patenting and monetizing these foundational technologies in the 2024-2026 AI landscape.
 
 ## 1. Baptized Innovations (Novelty Verification)
 
-Extensive prior art research confirms that while concepts like "World Models" (LeCun, JEPA) and "Test-Time Compute" (OpenAI o1) exist, the specific combinations engineered in Miiri-256 are novel. We officially baptize the following proprietary architectures:
+Extensive prior art research confirms that while concepts like "World Models" (LeCun, JEPA) and "Test-Time Compute" (OpenAI o1) exist, the specific combinations engineered in Miiri are novel. We officially baptize the following proprietary architectures:
 
 ### 1.1 Quad-Partitioned Latent Semantic Space (QPLS)
 *   **Description:** Forcing an embedding vector to be strictly divided into logical segments (`Entities`, `Properties`, `Operators`, `Metadata`) rather than a continuous unstructured distribution.
@@ -33,11 +33,11 @@ According to USPTO guidelines (2024-2026), generic mathematical algorithms or pu
 
 ## 3. Monetization Strategy: Foundational Model as Enterprise Capital
 
-The Miiri-256 is not designed to compete with ChatGPT as a consumer chatbot. It is a "Zero-Hallucination" reasoning engine. Monetization must target B2B sectors where accuracy is legally or financially critical (Pharma, Aerospace, Finance, Legal).
+The Miiri is not designed to compete with ChatGPT as a consumer chatbot. It is a "Zero-Hallucination" reasoning engine. Monetization must target B2B sectors where accuracy is legally or financially critical (Pharma, Aerospace, Finance, Legal).
 
 ### 3.1 The "Proof-of-Work" Tokenization Model
 *   **Current Standard:** AI companies charge per output token (e.g., $0.01 per 1k words).
-*   **Miiri Monetization:** Charge per **"Latent Reasoning Step" (Compute Iteration)**. Since Miiri-256 decouples reasoning from text length, a user asking to solve a complex fluid dynamics problem might only receive a 10-word answer ("The pressure will exceed the threshold"), but the model ran 1,000 recurrent loops in LSRA. Customers pay for the *Test-Time Compute* depth, not the text volume.
+*   **Miiri Monetization:** Charge per **"Latent Reasoning Step" (Compute Iteration)**. Since Miiri decouples reasoning from text length, a user asking to solve a complex fluid dynamics problem might only receive a 10-word answer ("The pressure will exceed the threshold"), but the model ran 1,000 recurrent loops in LSRA. Customers pay for the *Test-Time Compute* depth, not the text volume.
 
 ### 3.2 Privacy-Protected "Lobe Licensing"
 *   **Strategy:** Open-source the Sensory Lobes (Ports 26401-26404) and the QPLS vector specification so developers can format their data into Mentalese.

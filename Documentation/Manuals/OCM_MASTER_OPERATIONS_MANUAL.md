@@ -1,7 +1,7 @@
-# 📘 Miiri-256 : MASTER OPERATIONS MANUAL
+# 📘 Miiri : MASTER OPERATIONS MANUAL
 *Version : 1.0.0 (Production Grade) | Classification : Confidentiel / Cœur de Technologie*
 
-Ce document est le guide canonique exhaustif pour la création, le déploiement, l'entraînement et l'ajustement (tuning) d'un modèle basé sur l'architecture **Architecture Miiri (Pensée Unifiée) (Miiri-256)**. 
+Ce document est le guide canonique exhaustif pour la création, le déploiement, l'entraînement et l'ajustement (tuning) d'un modèle basé sur l'architecture **Architecture Miiri (Pensée Unifiée) (Miiri)**. 
 
 Il s'adresse à quatre profils : **Architectes/Développeurs**, **Data Engineers**, **Tuners/Chercheurs en RL**, et **Administrateurs Système (MLOps)**.
 
@@ -9,9 +9,9 @@ Il s'adresse à quatre profils : **Architectes/Développeurs**, **Data Engineers
 
 ## 🛑 PARTIE 1 : LE PARADIGME FONDAMENTAL (POUR TOUS)
 
-L'Miiri-256 n'est pas un LLM (Large Language Model) au sens classique. Il s'agit d'un **Moteur de Raisonnement Neuro-Symbolique à Récurrence Latente**.
+L'Miiri n'est pas un LLM (Large Language Model) au sens classique. Il s'agit d'un **Moteur de Raisonnement Neuro-Symbolique à Récurrence Latente**.
 
-1.  **L'Échec du "Next-Token Prediction" :** Les LLMs prédisent le prochain mot. S'ils ne l'ont pas vu dans leurs données, ils hallucinent. L'Miiri-256 ne prédit pas de mots. Il manipule des **concepts purs (Mentalese)** et applique des opérateurs mathématiques ou grammaticaux vérifiés en temps réel par un moteur symbolique.
+1.  **L'Échec du "Next-Token Prediction" :** Les LLMs prédisent le prochain mot. S'ils ne l'ont pas vu dans leurs données, ils hallucinent. L'Miiri ne prédit pas de mots. Il manipule des **concepts purs (Mentalese)** et applique des opérateurs mathématiques ou grammaticaux vérifiés en temps réel par un moteur symbolique.
 2.  **Le Grokking avant la Composition :** On n'enseigne pas des phrases à l'Miiri. On lui enseigne un dictionnaire de *Primitives* (radicaux, suffixes, lois physiques) jusqu'à ce que la mémorisation s'effondre et que la compréhension émerge (Grokking).
 3.  **Test-Time Compute (TTC) :** Au lieu d'avoir 100 couches de neurones, l'Miiri a un petit bloc de neurones qui **boucle sur lui-même** (Récurrence Fenêtrée). Il réfléchit plus longtemps pour les problèmes difficiles sans consommer plus de VRAM.
 
@@ -78,7 +78,7 @@ Le modèle ne lit pas Wikipedia. Il suit un cursus scolaire strict.
 
 ## ⚙️ PARTIE 5 : GUIDE DE L'ADMINISTRATEUR (MLOps)
 
-L'infrastructure Miiri-256 repose sur des micro-services (Lobes) connectés via ZeroMQ (IPC).
+L'infrastructure Miiri repose sur des micro-services (Lobes) connectés via ZeroMQ (IPC).
 
 ### 5.1 Plan d'adressage des Ports (Crucial)
 Le firewall du cluster doit autoriser ces communications internes avec une latence < 1ms.

@@ -1,6 +1,6 @@
 # Chapitre 4 : Data Engineering & Curriculum (Production Grade)
 
-L'Miiri-256 nécessite un pipeline de données radicalement différent de celui d'un LLM de type GPT. Vous n'entraînez pas sur du texte brut extrait du web. Vous construisez un **Cursus de Primitives**.
+L'Miiri nécessite un pipeline de données radicalement différent de celui d'un LLM de type GPT. Vous n'entraînez pas sur du texte brut extrait du web. Vous construisez un **Cursus de Primitives**.
 
 ## 4.1 Formatage des Données (Orthogonal Sparsity)
 Les données doivent être ingérées via des formats Big Data (Parquet ou JSONL).

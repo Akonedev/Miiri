@@ -1,7 +1,7 @@
-# Deep Architecture Blueprint : Miiri-256
+# Deep Architecture Blueprint : Miiri
 ## Architecture Miiri (Pensée Unifiée) via Latent-to-Symbolic Recurrence
 
-Ce document détaille l'architecture système, les flux de données et la topologie réseau de l'IA **Miiri-256**. Conçue pour une rigueur de niveau "Production Grade", cette architecture résout le problème des hallucinations des LLMs en remplaçant la génération autoregressive par un **Raisonnement Latent Vérifié**.
+Ce document détaille l'architecture système, les flux de données et la topologie réseau de l'IA **Miiri**. Conçue pour une rigueur de niveau "Production Grade", cette architecture résout le problème des hallucinations des LLMs en remplaçant la génération autoregressive par un **Raisonnement Latent Vérifié**.
 
 ---
 
@@ -64,7 +64,7 @@ graph TD
 ### 2. Vue Micro : L'Espace Latent Quadri-Partitionné (QPLS)
 
 **Innovation Baptisée : Quad-Partitioned Latent Semantic Space (QPLS)**
-Contrairement aux espaces latents continus classiques (où le sens est distribué uniformément, rendant la composition mathématiquement instable), le vecteur Mentalese $d=256$ du Miiri-256 est **strictement partitionné**. 
+Contrairement aux espaces latents continus classiques (où le sens est distribué uniformément, rendant la composition mathématiquement instable), le vecteur Mentalese $d=256$ du Miiri est **strictement partitionné**. 
 
 Cette innovation garantit que les opérations (ex: "ajouter un pluriel", "appliquer la gravité") n'altèrent pas l'identité de l'objet manipulé.
 
@@ -120,5 +120,5 @@ sequenceDiagram
 ```
 
 **Pourquoi est-ce "Production Grade" ?**
-Au lieu de forcer un LLM de 70 Milliards de paramètres à tout calculer en un passage (ce qui coûte énormément de VRAM et produit des erreurs), Miiri-256 utilise un modèle très léger (ex: 1 Milliard de paramètres) mais le fait boucler 64 fois dans sa RAM locale. 
+Au lieu de forcer un LLM de 70 Milliards de paramètres à tout calculer en un passage (ce qui coûte énormément de VRAM et produit des erreurs), Miiri utilise un modèle très léger (ex: 1 Milliard de paramètres) mais le fait boucler 64 fois dans sa RAM locale. 
 Le coût de calcul est basculé vers le moment de l'inférence (**Test-Time Compute**), imitant le système "Slow Thinking" (Système 2) du cerveau humain.

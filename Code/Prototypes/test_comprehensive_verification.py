@@ -19,7 +19,7 @@ def type_effect(text, delay=0.015):
 
 class CognitiveTestBed:
     """
-    Simulateur de Test pour l'architecture Miiri-256 Vivante.
+    Simulateur de Test pour l'architecture Miiri Vivante.
     """
     def __init__(self):
         self.device = torch.device("cpu")
@@ -90,7 +90,7 @@ class CognitiveTestBed:
 
 if __name__ == "__main__":
     print("=======================================================")
-    print(" 🧪 TEST DE VÉRIFICATION EXHAUSTIF : Miiri-256 AGI")
+    print(" 🧪 TEST DE VÉRIFICATION EXHAUSTIF : Miiri AGI")
     print("=======================================================")
     
     testbed = CognitiveTestBed()

@@ -18,7 +18,7 @@ def type_effect(text, delay=0.015):
 
 def main():
     print("\n" + "="*60)
-    print(" 🧠 Miiri-256 : NATIVE OMNI-CHAT (Zero-Frankenstein)")
+    print(" 🧠 Miiri : NATIVE OMNI-CHAT (Zero-Frankenstein)")
     print("="*60)
     
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -69,11 +69,11 @@ def main():
             
             if "image" in prompt.lower() or "draw" in prompt.lower() or "show" in prompt.lower():
                 # Force a visual token response simulation
-                type_effect(f"Miiri-256 > [Génération Patch Visuel - ID: 53842] -> <Affichage Image d'une pomme soumise à la gravité>")
+                type_effect(f"Miiri > [Génération Patch Visuel - ID: 53842] -> <Affichage Image d'une pomme soumise à la gravité>")
             elif "sound" in prompt.lower() or "audio" in prompt.lower():
-                type_effect(f"Miiri-256 > [Génération Trame Audio - ID: 69201] -> <Lecture Sonore: Onde à 440Hz>")
+                type_effect(f"Miiri > [Génération Trame Audio - ID: 69201] -> <Lecture Sonore: Onde à 440Hz>")
             else:
-                type_effect(f"Miiri-256 > [Texte] My mathematical logic confirms the physical trajectory. The result is deterministic.")
+                type_effect(f"Miiri > [Texte] My mathematical logic confirms the physical trajectory. The result is deterministic.")
             
         except KeyboardInterrupt:
             break

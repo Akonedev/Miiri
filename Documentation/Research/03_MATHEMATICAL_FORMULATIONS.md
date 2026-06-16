@@ -1,6 +1,6 @@
 # Mathematical Formulations and Loss Functions
 
-This document rigorously defines the mathematical framework underlying the **Architecture Miiri (Pensée Unifiée) (Miiri-256)** architecture, specifically detailing the **Amodal Mentalese Vector (AMV-256)** and the **Causal Rigor Loss ($\mathcal{L}_{CausalRigor}$)**.
+This document rigorously defines the mathematical framework underlying the **Architecture Miiri (Pensée Unifiée) (Miiri)** architecture, specifically detailing the **Amodal Mentalese Vector (AMV-256)** and the **Causal Rigor Loss ($\mathcal{L}_{CausalRigor}$)**.
 
 ## 1. The Amodal Mentalese Vector (AMV-256)
 
