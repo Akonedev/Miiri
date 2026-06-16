@@ -1,0 +1,311 @@
+
+## Idées a Explorer:  
+  
+- Rechercher, analyser,  débattre, Creuser pour voir vers quel solution adoptée : 
+ - Il faut prendre uniquement ce qui utile, nécessaire, ce qui apporte une réelle amélioration..
+- Le but n'est ps de tout reprendre
+- ONDES? "réseaux spectraux"?pysique?LNN
+ - Creuser pour voir vers quel solution adoptée : Models basées sur l’énergie? utiliser les ondes? la "réseaux spectraux"?
+ - Utiliser les principes de la Physique
+ - Les ondes ont des metadata : amplitude, fréquence, résonance, milieu d diffusion, Harmoniques, Gammes etc..
+ - On devrait pouvoir tout représenter avec les ondes. t
+ - Trouver un moyen de conversion (text, audio, images, video , temps), mapping	
+ - Scores- Metric
+- D&D bpb
+- Grammar bpb
+- Grammar Penalty
+- Combined score
+- Leraning rate
+- Lora target modules
+- Lora rank
+- Extraction connaissance sur ssd
+- Ghost Latent
+- Vocabulaire interne?
+- Auto-attention
+- Residu d'attention
+- Auto-Evolution
+- Auto-Apprentissage
+- Auto-Correction
+- auto-observation
+- Apprentissage contextuel
+- compress convolution Attention comme Zaya1-8b
+- Systems quantique simulé par des ordi classiques
+- Préparation et chargement des donnes
+- engram - ai persistant memeory
+-  Engram
+- n-gram hash
+- Hopfield network
+- botzmann machine
+- Riemann
+- Trive v2 : de meta (comprendre comment le cerveau traite l'info)
+- Methode hygrides Samba?? 
+- Models GLA, Griffin, Rwkv, Hawk ,Based, Hyena, RetNet
+- TurboQuant : de goggle :  compression kv - inference
+- higgsfields
+- MSA: Memory Sparse Attention for Efficient End-to-End Memory Model Scaling to 100M Tokens
+- https://huggingface.co/papers/2603.23516
+- https://github.com/EverMind-AI/EverMemOS
+- EverMemOS
+- HRM : Hierarchical Recursive Model
+- TRM :Tiny Network
+- Les models Arc-AGI a exploiter
+- GRAM - Raisonnement Recursive Generative
+- Mamba3
+- MiniCPM4.6
+- TinyTransformer
+- Jamba
+- KONA
+- GAPE
+- VISTA
+- FST
+- LiteRT-LM pour inferences??? est ce utile???
+- MTP - Multi Token Prediction
+- MLP
+- SSM - State Space Model
+- Densite de données
+- Transformations
+- Attention Causal
+- Attention Croisée
+- Golden Retreiver de Bert
+- LLM de diffusion 
+- LlaDa
+- MiniCPM : - https://arxiv.org/abs/2509.24663
+- Systeme MTP (multi token prediction)
+- PINNS
+- BERT
+- Neural ODEs - Depth Revolution
+- DNN
+- GNN
+- DDPN
+- DDPM
+- VIT
+- MMDIT
+- DIT
+- Model mathématique derrière les nombre premiers
+- Fonction Gamma
+- Jacobian
+- Eigen
+- Neural Radin Field - NeRF
+- SIREN : Implicit Neural Representation with Periodic Activation Functions*
+- EBM : Energy Based Model
+- V-JEPA
+- PMAX
+- D-JEPA
+- Energie Based Model
+- LEAN - Vérification math
+- Hodgkin -Huxley Model
+- Biological Computation
+- Differential Equations
+- GRAM - Probabilistic Generation.
+- PTRM - Probabilistic RRM
+- TRM - Tiny Recurssive Models
+- LDT - Lattice Tensor Encoding
+- Semantic Tokenization?? Autre Mode??? ou Pas de Tokenization ??
+
+### MATHS
+- Les maths des "réseaux spectraux"s
+- Theorie du tout
+- Nombre complexe
+- Quaternions : william Hamilton (1 partie Réel et 3 partie imaginaires) 
+- Espace 4 dimensions
+- Rotation en 3 Dimensions .. pas de blocage de cardan, pas de singularité
+- utilisé par les jeu vidéos et aérospatiale.
+- Octonions - Dimensions 8
+- Sédénion : Dimension 16
+- Formule de Cayley-Dickson
+- Théorème de Hurwitz (Seul dim 1.2 4 et 8 admettent un algèbre a division/ au de la c'est impossible)
+- Théorème des résidus : Formule de dérivation, ? 
+- Diagonalisation des matrices
+- Transformations géométriques
+- Analyse Vibratoire
+- Transformation/Transformée de Fourier
+- Traitement de signals (signals carre, triangulaire, idee de fourier etc...)
+- Spectre Fréquentiel
+- Principe de Régulateur /Correcteur PID (Proportionnel, Intégral, Dérivé)
+- Algorithme de Djjkstra
+- Algorithme "A star"	
+- Le Jacobien : ratio des aires - Formule du changement de variables
+- Déterminant de la matrice des dérivée partielles
+- distorsion - Formule de changement de variables
+- Technique de L'intégrale de Riemann
+- Les dimensions sont cree par les angles..
+
+Idée Découpage par: 
+- Par Mots
+- Par phrases
+- pour découper, il faut utiliser les séparateurs,  comme les espaces,  les ponctuations ( exemple".",  ","  , ":"  , ";"  , "?",  "!", et autres signes de ponctuations de phrases. )", 
+- Compréhension de mots : vocabulaire
+- Compréhension de sens : la phrase
+- Compréhension des règles de grammaire
+- Compréhension des règles de conjugaison
+- Compréhension des règles la plysiques
+- Compréhension des règles des maths ,  
+- Compréhension parfaite du machine learning,  Sciences, recherches IA 
+- Compréhension des règles des sciences et des règles associées   
+-  d'une manière générales, il faut identifier les mots , les phrases pour la tokenisation , ou pas de tokenization etc...
+
+ 
+## Sources  et  Etudes 
+ 
+- Ewin tang	
+- basée sur le travail  ewin tang (système quantique simulé: 
+- recherche *- liste des etudes .* 
+- il f aut analyser toutes les études et ewin tang et toutes les etudes arcxiv en lien avec le  sujet pour trouver des idées des solutions nouvelles
+
+- http://arxiv.org/search/?query=Machine+Learning&searchtype=all&source=header
+- https://arxiv.org/abs/2606.06494
+- https://arxiv.org/abs/2606.06481
+
+- Préentraînement
+- https://arxiv.org/abs/2606.06479
+
+- Récupération auto-augmentée
+- https://arxiv.org/abs/2606.06474
+
+- MLEvolve : un cadre auto-évolutif pour la découverte automatisée d’algorithmes
+- https://arxiv.org/abs/2606.06473
+
+- Vous n'indexez qu'une seule fois : attention clairsemée intercouches
+- https://arxiv.org/abs/2606.06467
+
+- Raisonnement latent avec flux normalisants
+- https://arxiv.org/abs/2606.06447
+
+- Détection d'événements pour l'apprentissage des dépendances
+- https://arxiv.org/abs/2606.06459
+- https://arxiv.org/abs/2606.06344
+- https://arxiv.org/abs/2606.06459
+- https://arxiv.org/abs/2606.06414
+- https://arxiv.org/abs/2606.06447
+- https://arxiv.org/abs/2606.06397
+- https://arxiv.org/abs/2606.06364
+- https://arxiv.org/abs/2606.06345
+- https://arxiv.org/abs/2003.04630
+- https://arxiv.org/abs/2606.06032
+- https://colah.github.io/posts/2015-09-Visual-Information/
+- https://www.youtube.com/watch?v=aVUzWaMYQbM
+- https://www.youtube.com/watch?v=p3TEMiu3PrA
+- https://www.youtube.com/watch?v=bxe2T-V8XRs&list=PLiaHhY2iBX9hdHaRr6b7XevZtgZRa1PoU
+- https://www.youtube.com/watch?v=ECv1-htM8P4&t=358s
+- https://www.youtube.com/watch?v=Zn4fApSAtsc
+- https://www.youtube.com/watch?v=PCkKElTacPg&t=29s
+- https://arxiv.org/abs/2206.05437v4
+- https://arxiv.org/abs/2606.06333
+- https://arxiv.org/abs/2606.06320
+- https://arxiv.org/abs/2606.06314
+- https://arxiv.org/abs/2606.06313
+- https://arxiv.org/abs/2606.06303
+- https://arxiv.org/abs/2606.06295
+- https://arxiv.org/abs/2606.06179
+- https://arxiv.org/abs/2606.06065
+- https://arxiv.org/abs/2606.05994
+- https://arxiv.org/abs/2606.06007
+- https://arxiv.org/abs/2606.06011
+- https://arxiv.org/abs/2606.06021
+- https://arxiv.org/abs/2606.05981
+- https://arxiv.org/abs/2606.05988
+- https://arxiv.org/abs/2606.05922
+- https://arxiv.org/search/?query=harness&searchtype=all&abstracts=show&order=-announced_date_first&size=50
+- https://arxiv.org/abs/2606.06448
+- https://arxiv.org/abs/2601.07675
+- https://arxiv.org/abs/2606.06109
+- https://arxiv.org/abs/2605.08311
+- https://arxiv.org/abs/2604.18839
+- https://arxiv.org/abs/2603.22871
+- https://arxiv.org/abs/2603.15641
+- https://arxiv.org/abs/2603.05234
+- https://arxiv.org/abs/2601.22694
+- https://arxiv.org/abs/2512.11847
+- https://arxiv.org/abs/2602.12078
+- https://arxiv.org/search/?query=trm&searchtype=all&abstracts=show&order=-announced_date_first&size=50
+- https://arxiv.org/abs/2605.22164
+- https://arxiv.org/abs/2605.19943
+- https://arxiv.org/abs/2606.04672
+- https://arxiv.org/search/?query=SSM&searchtype=all&source=header
+- https://arxiv.org/abs/2606.02332
+- https://arxiv.org/abs/2606.00390
+- https://arxiv.org/abs/2605.28983
+- https://arxiv.org/abs/2605.27406
+- https://arxiv.org/abs/2605.25892
+- https://arxiv.org/abs/2605.21308
+- https://arxiv.org/abs/2605.14598
+- https://arxiv.org/abs/2605.08301
+- https://arxiv.org/abs/2605.13833
+- https://arxiv.org/abs/2503.04530
+- https://arxiv.org/abs/2603.22871
+- https://arxiv.org/abs/1710.10867
+- https://arxiv.org/abs/1811.04909
+- https://arxiv.org/abs/2009.07268
+- https://arxiv.org/abs/1710.10867
+- https://arxiv.org/abs/1811.04909
+- https://arxiv.org/abs/2009.07268
+- [https://arxiv.org/abs/2310.02243](https://arxiv.org/search/?query=ewin+tang&searchtype=all&abstracts=show&order=-announced_date_first&size=50)
+- TwELL : https://pub.sakana.ai/sparser-faster-llms/
+- https://jack-clark.net/
+- https://jack-clark.net/2026/05/04/import-ai-455-automating-ai-research/
+- https://arxiv.org/abs/2301.08727
+- https://jack-clark.net/2026/02/09/import-ai-444-llm-societies-huawei-makes-kernels-with-ai-chipbench/
+- https://arxiv.org/abs/2601.10825
+- https://x.com/sama/status/1983584366547829073?lang=en
+- https://www.anthropic.com/research/automated-alignment-researchers
+- https://arxiv.org/abs/2504.01849
+- https://mirendil.com/
+- https://arxiv.org/abs/1003.0358
+- https://arxiv.org/abs/2409.11363
+- https://arxiv.org/abs/1710.10867
+- https://arxiv.org/abs/1811.04909
+- https://arxiv.org/abs/2009.07268
+- https://arxiv.org/html/2603.15914
+- https://github.com/ai-agents-2030/awesome-deep-research-agent
+- https://github.com/VoltAgent/awesome-ai-agent-papers
+- https://github.com/HKUST-KnowComp/Awesome-LLM-Scientific-Discovery
+- [https://arxiv.org/abs/2310.02243](https://arxiv.org/search/?query=ewin+tang&searchtype=all&abstracts=show&order=-announced_date_first&size=50)
+- https://www.youtube.com/watch?v=-EkINY3AAoU&t=329s
+- https://www.youtube.com/watch?v=EhndHhIvWWw&t=1603s
+- https://www.youtube.com/watch?v=SFi9KsnidNc&t=124s
+- https://www.youtube.com/watch?v=bmr718eZYGU
+- https://www.youtube.com/watch?v=3mFNpeJQjmw
+- https://www.youtube.com/watch?v=ECv1-htM8P4
+- https://www.youtube.com/watch?v=nEaljlUlqKk
+- https://www.youtube.com/watch?v=8d8Ko73XGeY&list=PLlI0-qAzf2Sa006JR1RMtqpu6q6BWdcfR
+- https://www.youtube.com/watch?v=lTy_AAjSTD8
+- https://www.youtube.com/watch?v=JqvB8fCOcfs
+- https://www.youtube.com/watch?v=PMiDdfwwRdM&t=829s
+- https://www.youtube.com/watch?v=o_cAOa5fMhE&pp=ugUHEgVmci1GUg%3D%3D
+- https://www.youtube.com/watch?v=l-OLgbdZ3kk&t=308s&pp=ugUHEgVmci1GUg%3D%3D
+- https://www.youtube.com/watch?v=CRlN-cYFxTk&t=1142s
+- https://www.youtube.com/watch?v=pDsTcrRVNc0
+
+https://arxiv.org/abs/2606.05846
+
+
+/media/akone/Dev/Dev_D/01_Dev_1/IA_Dev_D/Docs/Pdf
+
+
+## ENTRAINEMENTS
+
+- (https://github.com/karpathy/autoresearch) 
+	 - https://github.com/uditgoenka/autoresearch
+	 - https://github.com/WecoAI/awesome-autoresearch
+	- https://github.com/alvinreal/awesome-autoresearch
+	- https://github.com/kyegomez/OpenMythos
+	- https://github.com/igorbarshteyn/glasswing-open
+	- https://github.com/Keyvanhardani/mythos-research
+	- https://github.com/SarthakDz/OpenMythos-Skill
+	- PolymanthicAi/the_well : https://github.com/PolymathicAI/the_well
+	- https://huggingface.co/collections/polymathic-ai/the-well
+	 https://github.com/vediyappanm/UltraThinking-LLM-Training
+	 - (https://github.com/karpathy/autoresearch) 
+	 - https://github.com/uditgoenka/autoresearch
+	- https://jack-clark.net/
+	- https://jack-clark.net/2026/05/04/import-ai-455-automating-ai-research/
+	- https://arxiv.org/abs/2301.08727
+	- https://jack-clark.net/2026/02/09/import-ai-444-llm-societies-huawei-makes-kernels-with-ai-chipbench/
+	- https://arxiv.org/abs/2601.10825
+	- https://x.com/sama/status/1983584366547829073?lang=en
+	- https://www.anthropic.com/research/automated-alignment-researchers
+	- https://arxiv.org/abs/2504.01849
+	- https://mirendil.com/
+	- https://arxiv.org/abs/1003.0358
+	- https://arxiv.org/abs/2409.11363
+	

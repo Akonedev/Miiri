@@ -1,0 +1,6 @@
+## Leçon 5 : Le "Bottleneck Collapse" (L'Effondrement du Goulot d'Étranglement)
+**Pattern :** Greffer un modèle de langage autoregressif massif (ex: DistilGPT-2 à $d=768$) sur un espace latent structuré étroit ($d=256$) avec un entraînement court (15 époques).
+**Anti-pattern :** Penser que le transfert de compétences ("Fluence en Anglais") survit à un goulot d'étranglement mathématique sans un ré-entraînement massif.
+**Why it failed :** Lors de l'exécution autonome du chat, le modèle a produit des phrases répétitives ("The concept of gravity is a general concept of gravity...") ou déconnectées. En forçant les 768 dimensions du langage dans les 256 dimensions du Mentalese sans des millions d'itérations, nous avons provoqué une **Amnésie Catastrophique** (Catastrophic Forgetting). Le modèle perd la finesse de la langue pour tenter de satisfaire la pénalité causale de la Loss ACSP.
+**Conditions :** L'intégration d'un LLM comme "Cortex Linguistique" au-dessus du port 26401 exige une technique de **Knowledge Distillation (LoRA ou QLoRA)** sur au moins 10 Milliards de tokens pour que le LLM apprenne à mapper doucement son vocabulaire sur les primitives du dictionnaire, sans écraser ses poids pré-entraînés.
+**Metric delta :** Chute de la cohérence linguistique (Perplexité) lorsque la Loss Causale force le vecteur dans les limites de la "Quad-Partition".

@@ -1,0 +1,8 @@
+{"id": "root_chant", "type": "ENTITY", "value": [0.95, -0.1, 0.2, 0.0, 0.0], "description": "Radical: chanter"}
+{"id": "root_am", "type": "ENTITY", "value": [0.82, 0.4, -0.2, 0.0, 0.0], "description": "Radical: amour"}
+{"id": "suffix_eur", "type": "PROPERTY", "value": [0.1, 0.9, 0.0, 0.0, 0.0], "description": "Suffixe: Agent (celui qui fait)"}
+{"id": "suffix_able", "type": "PROPERTY", "value": [0.0, 0.8, 0.5, 0.0, 0.0], "description": "Suffixe: Capacité"}
+{"id": "flexion_s", "type": "PROPERTY", "value": [-0.5, 0.0, 0.9, 0.0, 0.0], "description": "Flexion: Pluriel"}
+{"id": "op_compose", "type": "OPERATOR", "value": [1.0, 1.0, 1.0, 0.0, 0.0], "description": "Opérateur: Composition Sémantique"}
+{"id": "concept_mass", "type": "ENTITY", "value": [0.5, 0.5, 0.5, 0.5, 0.5], "description": "Concept Physique: Masse"}
+{"id": "op_gravity", "type": "OPERATOR", "value": [-1.0, -1.0, -1.0, 0.0, 0.0], "description": "Opérateur Physique: Gravité"}

@@ -1,0 +1,29 @@
+project: OCM-26400-ARCHETYPE
+version: 1.0.0
+
+mentalese_vector:
+  total_dimension: 256
+  segments:
+    entities: [0, 63]      # Primitives sémantiques / Radicaux
+    properties: [64, 127]  # Attributs / Affixes / Unités
+    operators: [128, 191]   # Fonctions de composition / Lois causales
+    metadata: [192, 255]    # Confiance / Attention / Source
+
+learning_params:
+  grokking_threshold: 0.999
+  backtracking_penalty: 1000.0
+  max_latent_iterations: 64 # Nombre max de rebouclages sur les ports 26415-18
+  sparsity_factor (L1): 0.1
+
+ipc_protocol:
+  transport: zmq
+  mode: pub_sub
+  master_port: 26400
+  timeout_ms: 10
+
+lobes:
+  linguistic: { port: 26401, type: "neuro-symbolic" }
+  audio: { port: 26402, type: "amodal-aligned" }
+  vision: { port: 26403, type: "amodal-aligned" }
+  spatial: { port: 26404, type: "geometric-3d" }
+  memory_semantic: { port: 26412, persistence: "locked_after_grok" }

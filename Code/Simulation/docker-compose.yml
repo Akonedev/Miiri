@@ -1,0 +1,132 @@
+version: '3.8'
+
+services:
+  # --- COUCHE SUPERVISEUR ---
+  supervisor:
+    build: .
+    ports:
+      - "26400:26400"
+    environment:
+      - LOBE_ID=GLOBAL_WORKSPACE
+      - PORT=26400
+      - TYPE=PUB
+    networks:
+      - ocm-net
+
+  # --- COUCHE SENSORIELLE ---
+  linguistic_lobe:
+    build: .
+    ports:
+      - "26401:26401"
+    environment:
+      - LOBE_ID=LINGUISTIC_LOBE
+      - PORT=26401
+      - TYPE=PUB
+    networks:
+      - ocm-net
+
+  phonetic_lobe:
+    build: .
+    ports:
+      - "26402:26402"
+    environment:
+      - LOBE_ID=PHONETIC_LOBE
+      - PORT=26402
+      - TYPE=PUB
+    networks:
+      - ocm-net
+
+  visual_lobe:
+    build: .
+    ports:
+      - "26403:26403"
+    environment:
+      - LOBE_ID=VISUAL_LOBE
+      - PORT=26403
+      - TYPE=PUB
+    networks:
+      - ocm-net
+
+  spatial_lobe:
+    build: .
+    ports:
+      - "26404:26404"
+    environment:
+      - LOBE_ID=SPATIAL_LOBE
+      - PORT=26404
+      - TYPE=PUB
+    networks:
+      - ocm-net
+
+  # --- COUCHE MÉMOIRE ---
+  scratchpad:
+    build: .
+    ports:
+      - "26410:26410"
+    environment:
+      - LOBE_ID=SCRATCHPAD
+      - PORT=26410
+      - TYPE=REP
+    networks:
+      - ocm-net
+
+  episodic_memory:
+    build: .
+    ports:
+      - "26411:26411"
+    environment:
+      - LOBE_ID=EPISODIC_MEMORY
+      - PORT=26411
+      - TYPE=REP
+    networks:
+      - ocm-net
+
+  semantic_memory:
+    build: .
+    ports:
+      - "26412:26412"
+    environment:
+      - LOBE_ID=SEMANTIC_MEMORY
+      - PORT=26412
+      - TYPE=REP
+    networks:
+      - ocm-net
+
+  # --- COUCHE RAISONNEMENT ---
+  reasoning_1:
+    build: .
+    ports:
+      - "26415:26415"
+    environment:
+      - LOBE_ID=REASONING_NODE_1
+      - PORT=26415
+      - TYPE=REP
+    networks:
+      - ocm-net
+
+  reasoning_2:
+    build: .
+    ports:
+      - "26416:26416"
+    environment:
+      - LOBE_ID=REASONING_NODE_2
+      - PORT=26416
+      - TYPE=REP
+    networks:
+      - ocm-net
+
+  # --- COUCHE ACTION ---
+  action_lobe:
+    build: .
+    ports:
+      - "26419:26419"
+    environment:
+      - LOBE_ID=ACTION_LOBE
+      - PORT=26419
+      - TYPE=SUB
+    networks:
+      - ocm-net
+
+networks:
+  ocm-net:
+    driver: bridge
