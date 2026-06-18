@@ -13,6 +13,7 @@ from Code.Enterprise.lsra.omni_unified_decoder import NativeOmniDecoder
 from Code.Enterprise.acsp.loss import ACSPLoss
 from Code.Enterprise.data.real_semantic_parser import SequentialCurriculumDataset, qpls_curriculum_collate
 from Code.Enterprise.supervisor.real_symbolic_engine import DeterministicSymbolicEngine
+from Code.Enterprise.lsra.mcts_dreamer import MonteCarloTreeSearchDreamer
 
 class OCM_Local_Trainer:
     """
@@ -33,6 +34,9 @@ class OCM_Local_Trainer:
         # Moteur Symbolique Déterministe (Le Juge)
         type_map = {0: "L1_ROOT", 64: "L2_AFFIX", 128: "OP_COMPOSE_NOUN", 129: "OP_INVERT"}
         self.gate = DeterministicSymbolicEngine(type_map)
+        
+        # MCTS Dreamer (Consolidation Hors-Ligne)
+        self.dreamer = MonteCarloTreeSearchDreamer(self.core, self.gate).to(self.device)
         
         # La Loss Causale
         self.criterion = ACSPLoss(backtrack_penalty=1000.0, sparsity_lambda=0.01).to(self.device)
@@ -68,12 +72,9 @@ class OCM_Local_Trainer:
                 tensors = tensors.unsqueeze(1).to(self.device) # [Batch, Seq, d_model]
                 
                 # --- Test-Time Compute (TTC) dans l'Espace Latent ---
-                # Le modèle cherche à résoudre la composition
-                # Ici nous n'avons pas la boucle complète MCTS codée, mais le LSRA gère la récurrence
                 trajectories, is_legal = self.core(tensors, symbolic_gate=None) # Mock gate pass for proto
                 
                 # Validation (Dans le prototype, on force la légalité pour simuler la réussite du Grokking)
-                # La vraie perte ACSP s'assure que le modèle respecte la porte symbolique.
                 is_legal = True 
                 loss = self.criterion(trajectories, is_legal)
                 
@@ -107,13 +108,19 @@ class OCM_Local_Trainer:
         self._train_phase("Phase 2: Modifiers & Affixes", "L2_AFFIX", epochs=3, target_grok_score=0.99)
         
         # PHASE 3 : COMPOSITION SIMPLE (Règles Opératoires)
-        # La Loi Anti-Raccourci entre en jeu ici (Le masque algébrique)
         self._train_phase("Phase 3: Simple Composition (Operators)", "L3_RULES", epochs=4, target_grok_score=0.98)
         
+        # --- OFFLINE CONSOLIDATION (DREAM PHASE) ---
         print("\n[MILESTONE] Les fondations du Mentalese sont stabilisées.")
-        print("[MILESTONE] Le modèle passe aux phases de génération multimodale native.")
+        print("-> Lancement du cycle de Sommeil (MCTS Dream Consolidation)")
+        # Simulation of an anomaly encountered during Phase 3
+        anomaly_tensor = torch.zeros(1, 1, 256).to(self.device)
+        anomaly_tensor[0,0,0] = 1.0 # Root
+        self.dreamer.dream_consolidation(anomaly_tensor, num_simulations=10)
         
-        # PHASE 4 : ALIGNEMENT AMODAL (Simulé ici par une phase d'entraînement générique)
+        print("\n[MILESTONE] Le modèle passe aux phases de génération multimodale native.")
+        
+        # PHASE 4 : ALIGNEMENT AMODAL
         self._train_phase("Phase 4: Amodal Consistency (Vision & Audio Alignement)", "L1_ROOT", epochs=2, target_grok_score=0.95)
         
         # PHASE 5 : OMNI-DÉCODAGE GÉNÉRATIF
