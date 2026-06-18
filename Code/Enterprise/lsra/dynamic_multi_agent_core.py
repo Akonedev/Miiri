@@ -44,15 +44,15 @@ class DynamicMultiAgentCore(nn.Module):
         stacked_proposals = torch.stack(agent_proposals, dim=1)
         
         # 2. Se challenger mutuellement (Cross-Attention)
-        print("[MULTI-AGENT DEBATE] Concertation et Challenge interne (Cross-Attention)...")
+        # print("[MULTI-AGENT DEBATE] Concertation et Challenge interne (Cross-Attention)...")
         consensus_vector, _ = self.consensus_attention(
-            query=x_latent.unsqueeze(1), 
-            key=stacked_proposals.squeeze(0), 
-            value=stacked_proposals.squeeze(0)
+            query=x_latent.unsqueeze(1), # [Batch, 1, d_model]
+            key=stacked_proposals,       # [Batch, num_agents, d_model]
+            value=stacked_proposals      # [Batch, num_agents, d_model]
         )
         
         # 3. Validation
-        print("[MULTI-AGENT DEBATE] Consensus atteint. Soumission au Symbolic Gate.")
+        # print("[MULTI-AGENT DEBATE] Consensus atteint. Soumission au Symbolic Gate.")
         return consensus_vector.squeeze(1)
 
 if __name__ == "__main__":
