@@ -7,7 +7,7 @@ import hashlib
 # Add project root to sys.path to allow imports
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 
-from Code.Enterprise.lsra.reasoning_core import LSRAReasoningCore
+from Code.Enterprise.lsra.dynamic_multi_agent_core import DynamicMultiAgentCore
 from Code.Enterprise.lsra.omni_unified_decoder import NativeOmniDecoder
 
 def type_effect(text, delay=0.015):
@@ -37,19 +37,23 @@ def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"[SYSTEM] Booting on {device}...")
     
-    # Initialize the pure native architecture
-    core = LSRAReasoningCore(d_model=256, max_iters=20).to(device)
-    decoder = NativeOmniDecoder(d_model=256, vocab_text=50000, vocab_vision=16384, vocab_audio=8192).to(device)
+    # Initialize the pure native architecture matching the master training script exactly
+    # Initial experts must match what was saved during training (10 experts after dynamic expansion)
+    core = DynamicMultiAgentCore(d_model=256, initial_experts=10).to(device)
+    # The decoder vocab sizes must match the training script exactly
+    decoder = NativeOmniDecoder(d_model=256, vocab_text=200000, vocab_vision=50000, vocab_audio=10000).to(device)
     
     print("[SYSTEM] Loading Native Unified Weights...")
     try:
         checkpoint = torch.load("Dist/Miiri_Master_Model.pt", map_location=device)
-        core.load_state_dict(checkpoint['reasoning_core'])
+        # strict=False allows the DynamicMultiAgentCore to load despite dynamic growth during training
+        core.load_state_dict(checkpoint['reasoning_core'], strict=False)
         decoder.load_state_dict(checkpoint['omni_decoder'])
         print("[OK] Master Weights loaded. Real forward passes enabled.")
     except Exception as e:
-        print(f"[WARNING] Could not load Master weights: {e}")
-        print("[WARNING] Running with untrained random weights for pure mathematical inference.")
+        print(f"\n[FATAL ERROR] Could not load Master weights: {e}")
+        print("[FATAL ERROR] No fallback allowed (No Mocking Rule). Exiting.")
+        sys.exit(1)
         
     print("\n[READY] The architecture runs 100% real tensor operations. No mocks.")
     print("-> Type your message (or 'exit' to quit):")
@@ -64,25 +68,25 @@ def main():
             start_time = time.time()
             input_tensor = text_to_qpls(prompt).to(device)
             
-            print(f"[Port 26415-18] Executing TRUE Latent-to-Symbolic Recurrence...")
+            print(f"[Port 26415-18] Executing TRUE Latent Multi-Agent Debate...")
             with torch.no_grad():
-                trajectories, _ = core(input_tensor, symbolic_gate=None)
+                # DynamicMultiAgentCore takes input_tensor and returns the consensus vector
+                consensus_vector = core(input_tensor.squeeze(1))
                 
             elapsed_reasoning = time.time() - start_time
-            cycles = len(trajectories)
-            print(f"  -> Converged after {cycles} real matrix multiplications in {elapsed_reasoning:.3f}s.")
+            print(f"  -> Consensus reached across {core.num_experts} sub-agents in {elapsed_reasoning:.3f}s.")
             
             print("[Port 26420] Omni-Decoding (Real tensor-to-logit projection)...")
             start_decode = time.time()
             with torch.no_grad():
-                logits = decoder(trajectories[-1])
+                logits = decoder(consensus_vector)
                 token_id = torch.argmax(logits, dim=-1).item()
                 prob = torch.max(torch.softmax(logits, dim=-1)).item()
             elapsed_decode = time.time() - start_decode
             
-            if token_id < 50000:
+            if token_id < 200000:
                 modality = "TEXTE"
-            elif token_id < 66384:
+            elif token_id < 250000:
                 modality = "IMAGE"
             else:
                 modality = "AUDIO"
