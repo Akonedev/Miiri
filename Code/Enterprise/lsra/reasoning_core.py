@@ -52,8 +52,10 @@ class LSRAReasoningCore(nn.Module):
                 # Compute cosine similarity between current state and previous state
                 cos_sim = torch.nn.functional.cosine_similarity(next_state, prev_state, dim=-1)
                 # If highly similar (stagnating) and confidence is low, break early
-                confidence = torch.sigmoid(metadata[0, 0, 0]).item()
-                if cos_sim.item() > 0.95 and confidence < self.grok_threshold:
+                # Average the cosine similarity across the batch
+                avg_cos_sim = cos_sim.mean().item()
+                confidence = torch.sigmoid(metadata[0, 0, 0]).item() # taking first item of batch for proto
+                if avg_cos_sim > 0.95 and confidence < self.grok_threshold:
                     print("[WARNING] Stagnation Épistémique détectée (Paradoxe). Arrêt d'urgence du LSRA.")
                     trajectories.append(next_state)
                     return torch.stack(trajectories), False # Fail the thought process
