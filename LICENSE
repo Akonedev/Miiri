@@ -1,0 +1,26 @@
+MIIRI ENTERPRISE PROPRIETARY LICENSE
+Version 1.0, June 2026
+
+Copyright (c) 2026 OCM Architect Team / Akonedev. All rights reserved.
+
+1. PERMITTED USE
+Subject to the terms and conditions of this License, you are granted a non-exclusive, non-transferable, non-sublicensable, revocable license to access, view, and read the Source Code solely for internal, non-commercial research, academic, and evaluation purposes.
+
+2. COMMERCIAL USE STRICTLY PROHIBITED
+Any commercial use, integration, deployment, or monetization of this software, its architecture (including but not limited to QPLS, LSRA, and ACSP algorithms), or derivatives thereof, requires a separate Enterprise Commercial License. 
+"Commercial use" includes, but is not limited to:
+a) Deploying the model in a production environment for external users.
+b) Training derivative models for commercial gain.
+c) Integrating the 'Symbolic Verification Gate' or 'Latent Recurrent Core' into proprietary software or SaaS platforms.
+d) Using the software to generate data for commercial training pipelines.
+
+To obtain an Enterprise Commercial License, contact the copyright holder.
+
+3. DERIVATIVE WORKS AND MODIFICATIONS
+You may not modify, adapt, alter, translate, or create derivative works of the Software for any purpose other than personal, isolated, non-commercial testing. You may not distribute or publicly share any modified versions of the Software without explicit, written permission from the copyright holder.
+
+4. NO WARRANTY
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+5. INTELLECTUAL PROPERTY
+This repository contains patent-pending architectures including the Quad-Partitioned Latent Semantic Space (QPLS) and the Latent-to-Symbolic Recurrent Architecture (LSRA). Nothing in this License shall be construed as granting, by implication, estoppel, or otherwise, any license or right under any patent, trademark, or other intellectual property right of the copyright holder.
