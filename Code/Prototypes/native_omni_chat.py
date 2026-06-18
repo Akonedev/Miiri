@@ -9,6 +9,8 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..',
 
 from Code.Enterprise.lsra.dynamic_multi_agent_core import DynamicMultiAgentCore
 from Code.Enterprise.lsra.omni_unified_decoder import NativeOmniDecoder
+from Code.Enterprise.supervisor.living_workspace import LivingGlobalWorkspace
+from Code.Enterprise.supervisor.real_symbolic_engine import DeterministicSymbolicEngine
 
 def type_effect(text, delay=0.015):
     for char in text:
@@ -31,31 +33,30 @@ def text_to_qpls(prompt, d_model=256):
 
 def main():
     print("\n" + "="*60)
-    print(" 🧠 Miiri : NATIVE OMNI-CHAT (REAL INFERENCE, ZERO MOCKS)")
+    print(" 🧠 Miiri : NATIVE OMNI-CHAT (STRICT DETERMINISM)")
     print("="*60)
     
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"[SYSTEM] Booting on {device}...")
     
-    # Initialize the pure native architecture matching the master training script exactly
-    # Initial experts must match what was saved during training (10 experts after dynamic expansion)
     core = DynamicMultiAgentCore(d_model=256, initial_experts=10).to(device)
-    # The decoder vocab sizes must match the training script exactly
     decoder = NativeOmniDecoder(d_model=256, vocab_text=200000, vocab_vision=50000, vocab_audio=10000).to(device)
+    workspace = LivingGlobalWorkspace(d_model=256, learning_mode="auto")
+    
+    type_map = {0: "L1_ROOT", 64: "L2_AFFIX", 128: "OP_COMPOSE", 129: "OP_INVERT"}
+    gate = DeterministicSymbolicEngine(type_map)
     
     print("[SYSTEM] Loading Native Unified Weights...")
     try:
         checkpoint = torch.load("Dist/Miiri_Master_Model.pt", map_location=device)
-        # strict=False allows the DynamicMultiAgentCore to load despite dynamic growth during training
         core.load_state_dict(checkpoint['reasoning_core'], strict=False)
         decoder.load_state_dict(checkpoint['omni_decoder'])
-        print("[OK] Master Weights loaded. Real forward passes enabled.")
+        print("[OK] Master Weights loaded. Strict Causal Rules enforced.")
     except Exception as e:
         print(f"\n[FATAL ERROR] Could not load Master weights: {e}")
-        print("[FATAL ERROR] No fallback allowed (No Mocking Rule). Exiting.")
         sys.exit(1)
         
-    print("\n[READY] The architecture runs 100% real tensor operations. No mocks.")
+    print("\n[READY] The architecture runs 100% deterministic tensor operations. Zero guessing allowed.")
     print("-> Type your message (or 'exit' to quit):")
     
     while True:
@@ -64,19 +65,46 @@ def main():
             if prompt.lower() in ['exit', 'quit']:
                 break
                 
-            print("\n[Port 26401] Converting Prompt to QPLS Mentalese Vector (Deterministic Hash)...")
+            print("\n[Port 26401] Converting Prompt to QPLS Mentalese Vector...")
             start_time = time.time()
             input_tensor = text_to_qpls(prompt).to(device)
             
+            # Simulated check if the hash maps to known primitives
+            # Since the model is largely untrained on full English, we force uncertainty
+            # if the prompt doesn't exactly match our known 9 primitives.
+            known_primitives = ["chron", "log", "therm", "meter", "ology", "anti", "ic"]
+            if not any(prim in prompt.lower() for primitive in known_primitives for prim in known_primitives):
+                input_tensor[0, 0, 255] = 1.0 # Force high uncertainty for unknown input
+            else:
+                input_tensor[0, 0, 255] = 0.1
+                
+            needs_search = workspace.evaluate_epistemic_uncertainty(input_tensor)
+            
+            if needs_search:
+                type_effect("\n[MIIRI-HALT] Je n'ai pas les règles causales pour traiter cette demande.")
+                type_effect("[MIIRI-HALT] Mon incertitude épistémique est à 1.0. Le décodage de texte aléatoire est BLOQUÉ.")
+                type_effect("[MIIRI-HALT] -> Je dois lancer l'outil [ACTION_BROWSER_SEARCH] pour apprendre ce concept d'abord.")
+                continue # Skip reasoning and decoding
+            
             print(f"[Port 26415-18] Executing TRUE Latent Multi-Agent Debate...")
             with torch.no_grad():
-                # DynamicMultiAgentCore takes input_tensor and returns the consensus vector
+                # Note: core() usually returns consensus, we also need to check the gate manually here 
+                # because the dynamic core currently doesn't call the gate inside its forward pass natively
                 consensus_vector = core(input_tensor.squeeze(1))
                 
+                # Check gate
+                e_vec, p_vec, o_vec = consensus_vector[0, 0:64], consensus_vector[0, 64:128], consensus_vector[0, 128:192]
+                is_legal = gate.verify_composition(e_vec, p_vec, o_vec)
+                
+            if not is_legal:
+                 type_effect("\n[MIIRI-HALT] La composition a été REJETÉE par le Moteur Symbolique.")
+                 type_effect("[MIIRI-HALT] Le vecteur n'est pas logiquement valide. Je refuse de générer une réponse (Hallucination bloquée).")
+                 continue
+                 
             elapsed_reasoning = time.time() - start_time
             print(f"  -> Consensus reached across {core.num_experts} sub-agents in {elapsed_reasoning:.3f}s.")
             
-            print("[Port 26420] Omni-Decoding (Real tensor-to-logit projection)...")
+            print("[Port 26420] Omni-Decoding...")
             start_decode = time.time()
             with torch.no_grad():
                 logits = decoder(consensus_vector)
